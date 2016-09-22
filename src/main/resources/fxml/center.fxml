@@ -12,9 +12,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.image.Image?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="505.0"
-      prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="mxk.v1.controller.centerController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="505.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mxk.v1.controller.centerController">
    <children>
        <TabPane fx:id="centerTab" prefHeight="505.0" prefWidth="800.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
            <tabs>
@@ -23,7 +21,7 @@
                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
 
                            <children>
-                               <Label layoutX="50.0" layoutY="14.0" text="인사말">
+                               <Label fx:id="c1" layoutX="50.0" layoutY="14.0" text="인사말">
                                    <font>
                                        <Font name="System Bold" size="18.0" />
                                    </font>
@@ -42,7 +40,7 @@
                    <content>
                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                            <children>
-                               <Label layoutX="50.0" layoutY="14.0" text="주차장 이용안내">
+                               <Label fx:id="c2" layoutX="50.0" layoutY="14.0" text="주차장 이용안내">
                                    <font>
                                        <Font name="System Bold" size="18.0" />
                                    </font>
@@ -59,9 +57,9 @@
                    <content>
                        <StackPane prefHeight="150.0" prefWidth="200.0">
                            <children>
-                               <AnchorPane fx:id="swim" prefHeight="200.0" prefWidth="200.0">
+                               <AnchorPane fx:id="swim" prefHeight="200.0" prefWidth="200.0" visible="false">
                                    <children>
-                                       <Label layoutX="50.0" layoutY="14.0" text="본관 시설 현황">
+                                       <Label fx:id="c3a" layoutX="50.0" layoutY="14.0" text="본관 시설 현황">
                                            <font>
                                                <Font size="18.0" />
                                            </font>
@@ -90,9 +88,9 @@
                                        <Button layoutX="417.0" layoutY="427.0" mnemonicParsing="false" onAction="#g2soccer" text="축구장" />
                                    </children>
                                </AnchorPane>
-                               <AnchorPane fx:id="tennis" prefHeight="200.0" prefWidth="200.0" visible="false">
+                               <AnchorPane fx:id="tennis" prefHeight="200.0" prefWidth="200.0">
                                    <children>
-                                       <Label layoutX="50.0" layoutY="14.0" text="야외 시설 현황">
+                                       <Label fx:id="c3b" layoutX="50.0" layoutY="14.0" text="야외 시설 현황">
                                            <font>
                                                <Font size="18.0" />
                                            </font>
@@ -113,7 +111,7 @@
                                </AnchorPane>
                                <AnchorPane fx:id="soccer" prefHeight="200.0" prefWidth="200.0" visible="false">
                                    <children>
-                                       <Label layoutX="50.0" layoutY="14.0" text="야외 시설 현황">
+                                       <Label fx:id="c3c" layoutX="50.0" layoutY="14.0" text="야외 시설 현황">
                                            <font>
                                                <Font size="18.0" />
                                            </font>
@@ -140,7 +138,7 @@
                    <content>
                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                            <children>
-                               <Label layoutX="50.0" layoutY="14.0" text="울릉도민 체육센터 오시는 길">
+                               <Label fx:id="c4" layoutX="50.0" layoutY="14.0" text="울릉도민 체육센터 오시는 길">
                                    <font>
                                        <Font name="System Bold" size="18.0" />
                                    </font>

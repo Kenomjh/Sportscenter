@@ -3,10 +3,9 @@ package mxk.v1.controller;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.SingleSelectionModel;
-import javafx.scene.control.Tab;
-import javafx.scene.control.TabPane;
+import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.text.Font;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -20,11 +19,22 @@ public class centerController implements Initializable {
     @FXML public AnchorPane swim;
     @FXML public AnchorPane tennis;
     @FXML public AnchorPane soccer;
+    @FXML public Label c1;
+    @FXML public Label c2;
+    @FXML public Label c3a;
+    @FXML public Label c3b;
+    @FXML public Label c3c;
+    @FXML public Label c4;
 
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
+        c1.setFont(Font.loadFont(getClass().getResource("/font/rose.ttf").toExternalForm(), 18));
+        c2.setFont(Font.loadFont(getClass().getResource("/font/rose.ttf").toExternalForm(), 18));
+        c3a.setFont(Font.loadFont(getClass().getResource("/font/rose.ttf").toExternalForm(), 18));
+        c3b.setFont(Font.loadFont(getClass().getResource("/font/rose.ttf").toExternalForm(), 18));
+        c3c.setFont(Font.loadFont(getClass().getResource("/font/rose.ttf").toExternalForm(), 18));
+        c4.setFont(Font.loadFont(getClass().getResource("/font/rose.ttf").toExternalForm(), 18));
     }
 
     public void c0() throws Exception{

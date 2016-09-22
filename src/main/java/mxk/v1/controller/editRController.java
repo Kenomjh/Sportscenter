@@ -7,6 +7,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.layout.Pane;
+import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import mxk.v1.dao.rentalDAO;
 
@@ -16,7 +17,7 @@ import java.util.ResourceBundle;
 /**
  * Created by java on 2016-09-22.
  */
-public class editRController implements Initializable {
+public class editRController {
 
     @FXML private TextField userid;
     @FXML private TextField username;
@@ -26,6 +27,7 @@ public class editRController implements Initializable {
     @FXML private TextField ppay;
     @FXML private DatePicker pdate;
     @FXML private Pane editpane;
+    @FXML private Label titletxt;
 
     private String[] ptimes = new String[9];
     private static String prno;
@@ -33,8 +35,12 @@ public class editRController implements Initializable {
     public String rs;
     public String rs2;
 
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
+
+    public void startEditr(String prno, String y1, String y2, String y3) {
+        this.prno = prno;
+        //pdate.setValue(toString());
+        ptime.setValue(y1);
+        ppay.setText(y3);
 
         ptimes[0] = "06:00 - 08:00";
         ptimes[1] = "08:00 - 10:00";
@@ -53,14 +59,16 @@ public class editRController implements Initializable {
         username.setText(mainController.mlm.getUsername());
         tel.setText(mainController.mlm.getTel());
         addr.setText(mainController.mlm.getAddr());
+
+        titletxt.setFont(Font.loadFont(getClass().getResource("/font/rose.ttf").toExternalForm(), 18));
     }
 
     public void outppay(ActionEvent event) {
-
-        this.rs = (String)ptime.getSelectionModel().getSelectedItem();
-        rentalDAO rd = new rentalDAO();
-
-        ppay.setText(rd.loadPpay(rs));
+        if (ptime.getSelectionModel().getSelectedItem() != null) {
+            rs = (String)ptime.getSelectionModel().getSelectedItem();
+            rentalDAO rd = new rentalDAO();
+            ppay.setText(rd.loadPpay(rs));
+        }
     }
 
     public void updateRent(ActionEvent event) {
@@ -82,10 +90,6 @@ public class editRController implements Initializable {
     }
 
     public void deleteRent(ActionEvent event) {
-        Alert info = new Alert(Alert.AlertType.CONFIRMATION);
-        info.setTitle("삭제");
-        info.setHeaderText(null);
-        info.setContentText("예약하신 정보를 삭");
 
         rentalDAO rd = new rentalDAO();
         rd.deleteRS(prno);

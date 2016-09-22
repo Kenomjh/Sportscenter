@@ -72,7 +72,7 @@ public class loginController implements Initializable {
     private void showMain() {
 
         Stage stage = new Stage();
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("../../../main/resources/fxml/main.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/main.fxml"));
         Parent root = null;
         try {
             root = loader.load();
@@ -86,10 +86,6 @@ public class loginController implements Initializable {
 
         stage.show();
 
-
-    }
-
-    public void joinpg(ActionEvent event) {
 
     }
 

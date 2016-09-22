@@ -5,7 +5,10 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<Pane fx:id="editpane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mxk.v1.controller.editRController">
+<Pane fx:id="editpane" maxHeight="-Infinity" maxWidth="-Infinity"
+      minHeight="-Infinity" minWidth="-Infinity"
+      prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8"
+      xmlns:fx="http://javafx.com/fxml/1" fx:controller="mxk.v1.controller.editRController">
    <children>
       <ComboBox fx:id="ptime" layoutX="126.0" layoutY="229.0" onAction="#outppay" prefWidth="150.0" />
       <TextField fx:id="addr" editable="false" layoutX="126.0" layoutY="165.0" prefHeight="23.0" prefWidth="420.0" />
@@ -19,7 +22,7 @@
       <Label layoutX="54.0" layoutY="137.0" text="전화번호" />
       <Label layoutX="78.0" layoutY="104.0" text="이름" />
       <Label layoutX="68.0" layoutY="69.0" text="아이디" />
-      <Label layoutX="50.0" layoutY="14.0" text="축구장 예약 수정">
+      <Label fx:id="titletxt" layoutX="50.0" layoutY="14.0" text="축구장 예약 수정">
          <font>
             <Font size="18.0" />
          </font>

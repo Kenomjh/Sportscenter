@@ -16,19 +16,19 @@
                             <children>
                                 <AnchorPane fx:id="swim" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                     <children>
-                                        <Label layoutX="50.0" layoutY="14.0" text="강습안내">
+                                        <Label fx:id="k1" layoutX="50.0" layoutY="14.0" text="강습안내">
                                             <font>
                                                 <Font name="System Bold" size="18.0" />
                                             </font>
                                         </Label>
                                         <ImageView fitHeight="323.0" fitWidth="672.0" layoutX="69.0" layoutY="63.0" pickOnBounds="true" preserveRatio="true">
                                             <image>
-                                                <Image url="@../../img/20160920-0920-001.png" />
+                                                <Image url="/img/20160920-0920-001.png" />
                                             </image>
                                         </ImageView>
                                         <ImageView fitHeight="250.0" fitWidth="350.0" layoutX="275.0" layoutY="100.0" opacity="0.23" pickOnBounds="true" preserveRatio="true">
                                             <image>
-                                                <Image url="@../../img/KakaoTalk_20160920_102541006.png" />
+                                                <Image url="/img/KakaoTalk_20160920_102541006.png" />
                                             </image>
                                         </ImageView>
                                         <Button layoutX="182.0" layoutY="423.0" mnemonicParsing="false" onAction="#k0" prefWidth="100.0" text="수영" />
@@ -38,7 +38,7 @@
                                 </AnchorPane>
                                 <AnchorPane fx:id="tennis" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" visible="false">
                                     <children>
-                                        <Label layoutX="50.0" layoutY="14.0" text="강습안내">
+                                        <Label fx:id="k2" layoutX="50.0" layoutY="14.0" text="강습안내">
                                             <font>
                                                 <Font name="System Bold" size="18.0" />
                                             </font>
@@ -46,12 +46,12 @@
                                         <ImageView fitHeight="327.0" fitWidth="724.0" layoutX="48.0" layoutY="67.0" pickOnBounds="true" preserveRatio="true">
                                             <image>
 
-                                                <Image url="@../../img/20160920-0920-003.png" />
+                                                <Image url="/img/20160920-0920-003.png" />
                                             </image>
                                         </ImageView>
                                         <ImageView fitHeight="250.0" fitWidth="350.0" layoutX="275.0" layoutY="113.0" opacity="0.23" pickOnBounds="true" preserveRatio="true">
                                             <image>
-                                                <Image url="@../../img/KakaoTalk_20160920_102541201.png" />
+                                                <Image url="/img/KakaoTalk_20160920_102541201.png" />
                                             </image>
                                         </ImageView>
                                         <Button layoutX="182.0" layoutY="423.0" mnemonicParsing="false" onAction="#k0" prefWidth="100.0" text="수영" />
@@ -67,9 +67,9 @@
                     <content>
                         <StackPane prefHeight="150.0" prefWidth="200.0">
                             <children>
-                                <AnchorPane fx:id="step1" prefHeight="200.0" prefWidth="200.0" visible="false">
+                                <AnchorPane fx:id="step1" prefHeight="200.0" prefWidth="200.0">
                                     <children>
-                                        <Label layoutX="50.0" layoutY="14.0" text="강습 약관 동의">
+                                        <Label fx:id="k3" layoutX="50.0" layoutY="14.0" text="강습 약관 동의">
                                             <font>
                                                 <Font size="18.0" />
                                             </font>
@@ -85,7 +85,7 @@
                                 </AnchorPane>
                                 <AnchorPane fx:id="step2" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" visible="false">
                                     <children>
-                                        <Label layoutX="50.0" layoutY="14.0" text="강습신청">
+                                        <Label fx:id="k4" layoutX="50.0" layoutY="14.0" text="강습신청">
                                             <font>
                                                 <Font name="System Bold" size="18.0" />
                                             </font>
@@ -125,9 +125,9 @@
                                         <Label layoutX="139.0" layoutY="248.0" text="예상금액" />
                                     </children>
                                 </AnchorPane>
-                                <AnchorPane fx:id="step3" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                <AnchorPane fx:id="step3" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" visible="false">
                                     <children>
-                                        <Label layoutX="50.0" layoutY="14.0" text="강습신청확인">
+                                        <Label fx:id="k5" layoutX="50.0" layoutY="14.0" text="강습신청확인">
                                             <font>
                                                 <Font name="System Bold" size="18.0" />
                                             </font>

@@ -31,21 +31,34 @@ public class memberController implements Initializable {
     // 버튼
     @FXML
     Button nextbtn;
-    @FXML Button prebtn;
-    @FXML Button next2btn;
-    @FXML Button pre2btn;
-    @FXML Button next3btn;
-    @FXML Button login;
-    @FXML Button change;
-    @FXML Button exit;
-    @FXML Button addrbtn;
-    @FXML Button caddrbtn;
+    @FXML
+    Button prebtn;
+    @FXML
+    Button next2btn;
+    @FXML
+    Button pre2btn;
+    @FXML
+    Button next3btn;
+    @FXML
+    Button login;
+    @FXML
+    Button change;
+    @FXML
+    Button exit;
+    @FXML
+    Button addrbtn;
+    @FXML
+    Button caddrbtn;
 
     // 페인
-    @FXML Pane join1;
-    @FXML Pane join2;
-    @FXML Pane join3;
-    @FXML Pane join4;
+    @FXML
+    Pane join1;
+    @FXML
+    Pane join2;
+    @FXML
+    Pane join3;
+    @FXML
+    Pane join4;
     @FXML
     TabPane memberTab;
 
@@ -58,70 +71,127 @@ public class memberController implements Initializable {
     TextField uid;
     @FXML
     PasswordField pw;
-    @FXML PasswordField pwok;
-    @FXML TextField name;
-    @FXML CheckBox wo;
-    @FXML CheckBox ma;
-    @FXML TextField tel;
-    @FXML ComboBox year;
-    @FXML ComboBox mon;
-    @FXML ComboBox day;
-    @FXML TextField addr1;
-    @FXML TextField addr2;
-    @FXML TextField addr3;
-    @FXML TextField addr4;
-    @FXML TextField email;
-    @FXML ComboBox www;
-    @FXML CheckBox yes;
-    @FXML CheckBox no;
+    @FXML
+    PasswordField pwok;
+    @FXML
+    TextField name;
+    @FXML
+    CheckBox wo;
+    @FXML
+    CheckBox ma;
+    @FXML
+    TextField tel;
+    @FXML
+    ComboBox year;
+    @FXML
+    ComboBox mon;
+    @FXML
+    ComboBox day;
+    @FXML
+    TextField addr1;
+    @FXML
+    TextField addr2;
+    @FXML
+    TextField addr3;
+    @FXML
+    TextField addr4;
+    @FXML
+    TextField email;
+    @FXML
+    ComboBox www;
+    @FXML
+    CheckBox yes;
+    @FXML
+    CheckBox no;
 
     // join3
-    @FXML TextField rid;
-    @FXML TextField rname;
-    @FXML TextField rgen;
-    @FXML TextField rtel;
-    @FXML TextField rbirth;
-    @FXML TextField raddr1;
-    @FXML TextField raddr2;
-    @FXML TextField raddr3;
-    @FXML TextField raddr4;
-    @FXML TextField remail;
-    @FXML TextField rtalk;
+    @FXML
+    TextField rid;
+    @FXML
+    TextField rname;
+    @FXML
+    TextField rgen;
+    @FXML
+    TextField rtel;
+    @FXML
+    TextField rbirth;
+    @FXML
+    TextField raddr1;
+    @FXML
+    TextField raddr2;
+    @FXML
+    TextField raddr3;
+    @FXML
+    TextField raddr4;
+    @FXML
+    TextField remail;
+    @FXML
+    TextField rtalk;
 
     // mytab
-    @FXML TextField cid;
-    @FXML PasswordField cpw;
-    @FXML PasswordField cokpw;
-    @FXML TextField cname;
-    @FXML CheckBox cwo;
-    @FXML CheckBox cma;
-    @FXML TextField ctel;
-    @FXML TextField caddr1;
-    @FXML TextField caddr2;
-    @FXML TextField caddr3;
-    @FXML TextField caddr4;
-    @FXML TextField cmail;
-    @FXML ChoiceBox cwww;
-    @FXML CheckBox cyes;
-    @FXML CheckBox cno;
-    @FXML ChoiceBox cyear;
-    @FXML ChoiceBox cmon;
-    @FXML ChoiceBox cday;
+    @FXML
+    TextField cid;
+    @FXML
+    PasswordField cpw;
+    @FXML
+    PasswordField cokpw;
+    @FXML
+    TextField cname;
+    @FXML
+    CheckBox cwo;
+    @FXML
+    CheckBox cma;
+    @FXML
+    TextField ctel;
+    @FXML
+    TextField caddr1;
+    @FXML
+    TextField caddr2;
+    @FXML
+    TextField caddr3;
+    @FXML
+    TextField caddr4;
+    @FXML
+    TextField cmail;
+    @FXML
+    ChoiceBox cwww;
+    @FXML
+    CheckBox cyes;
+    @FXML
+    CheckBox cno;
+    @FXML
+    ChoiceBox cyear;
+    @FXML
+    ChoiceBox cmon;
+    @FXML
+    ChoiceBox cday;
 
     // restab
-    @FXML TableColumn pdate;
-    @FXML TableColumn ptime;
-    @FXML TableColumn ppay;
-    @FXML TableColumn tdate;
-    @FXML TableColumn ring;
-    @FXML TableColumn lesson;
-    @FXML TableColumn ldate;
-    @FXML TableColumn lcost;
-    @FXML TableColumn lres;
-    @FXML TableColumn lcount;
-    @FXML TableColumn edit;
+    @FXML
+    TableColumn pdate;
+    @FXML
+    TableColumn ptime;
+    @FXML
+    TableColumn ppay;
+    @FXML
+    TableColumn tdate;
+    @FXML
+    TableColumn ring;
+    @FXML
+    TableColumn lesson;
+    @FXML
+    TableColumn ldate;
+    @FXML
+    TableColumn lcost;
+    @FXML
+    TableColumn lres;
+    @FXML
+    TableColumn lcount;
+    @FXML
+    TableColumn edit;
 
-    @FXML TableView renttv;
+    @FXML
+    TableView renttv;
 
     private ObservableList<pReservationModel> rentlist = null;
     // TableView에 표시할 데이터들을 저장하기 위해
@@ -151,9 +221,9 @@ public class memberController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         memlist = new ArrayList();
 
-        checkAggree =0;
-        checkAggree2 =0;
-        checkAggree3 =0;
+        checkAggree = 0;
+        checkAggree2 = 0;
+        checkAggree3 = 0;
 
         gen = "";
         msg = "";
@@ -201,295 +271,276 @@ public class memberController implements Initializable {
 
         List<pReservationModel> rds = memberDAO.listRent(mainController.mlm);
         // board 테이블의 내용을 ArrayList 배열로 넘김
-        for (pReservationModel m : rds ) {
+        for (pReservationModel m : rds) {
             // 배열에 저장된 게시판 글목록에서 글(행)을 하나씩 읽어와서
             // observableList 에 저장
             rentlist.add(m);
         }
         renttv.setItems(rentlist);
 
-        edit.setCellFactory((param) -> new ButtonCell());
-
-
     } // initialize
 
-    //버튼 넣기 코드
-    private class ButtonCell extends TableCell<Disposer.Record, Boolean> {
+    public void updateR(ActionEvent actionEvent) throws Exception{
 
-        final Button cellButton2 = new Button(" 수정 / 취소 ");
+        int num = renttv.getSelectionModel().getSelectedIndex();
+        String ring = rentlist.get(num).getRing();
+        if (!ring.equals("예약취소")) {
 
-        ButtonCell() {
+            FXMLLoader f = new FXMLLoader(getClass().getResource("/fxml/editRent.fxml"));
+            Parent root = f.load();
 
-            cellButton2.setOnAction((t) -> {
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root));
 
-                int num = ButtonCell.this.getIndex();
-                String ring = rentlist.get(num).getRing();
-                if (!ring.equals("예약취소")) {
+            String prno = rentlist.get(num).getPrno();
+            String y1 = rentlist.get(num).getPtime();
+            String y2 = rentlist.get(num).getPdate();
+            String y3 = rentlist.get(num).getPpay();
+            editRController erc = f.getController();
+            erc.startEditr(prno, y1, y2, y3);
 
-                    FXMLLoader f = new FXMLLoader(getClass().getResource("/fxml/editRent.fxml"));
+            stage.showAndWait();
 
-                    Parent root = null;
-                    try {
-                        root = f.load();
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
+            rentlist.clear();
 
-                    Stage stage = new Stage();
-                    stage.setScene(new Scene(root));
-
-                    String prno = rentlist.get(num).getPrno();
-
-                    editRController erc = new editRController();
-                    erc.sendData(prno);
-                    stage.showAndWait();
-                    rentlist.clear();
-                    List<pReservationModel> km = memberDAO.listRent(mainController.mlm);
-                    for (pReservationModel m : km) {
-                        //배열에 저장된 게시판 글목록에서 글(행)을 하나씩 읽어와서 ObservableList 에 저장
-                        rentlist.add(m);
-                    }
-
-                    renttv.setItems(rentlist);
-                } else {
-                    Alert warn = new Alert(Alert.AlertType.WARNING);
-                    warn.setTitle(":: 변경 불가 일정 ::");
-                    warn.setHeaderText(null);
-                    warn.setContentText("이미 취소된 예약일정입니다.");
-                    warn.showAndWait();
-                }
-
-            });
-
-        }
-
-        @Override
-        protected void updateItem(Boolean t, boolean empty) {
-            super.updateItem(t, empty);
-            if (!empty) {
-                setGraphic(cellButton2);
+            List<pReservationModel> km = memberDAO.listRent(mainController.mlm);
+            for(pReservationModel m : km) {
+                rentlist.add(m);
             }
-        }
-    }
-        // 회원가입 첫 페이지
-        public void showfirst(Event e) {
-            join1.setVisible(true);
-            join2.setVisible(false);
-            join3.setVisible(false);
-            join4.setVisible(false);
-        }// showfirst
 
-        // 버튼 사라지게하기 - 동의하면 다시 나타나게
-        public void showbtn(ActionEvent ae) {
-            if (checkAggree == 1) {
-                nextbtn.setDisable(true);
-                checkAggree = 0;
-            } else {
-                nextbtn.setDisable(false);
-                checkAggree = 1;
-            }
-        } // showbtn
-
-        // 성별 - 정리
-        public void chwo(ActionEvent event) {
-            if (checkAggree2 == 0) gen = "여성";
-            else gen = "";
-        } // chwo
-
-        public void chma(ActionEvent event) {
-            if (checkAggree2 == 0) gen = "남성";
-            else gen = "";
-        } // chma
-
-        // 다음으로 - 두번째 화면으로
-        public void showsecond(ActionEvent event) throws Exception {
-            join1.setVisible(false);
-            join2.setVisible(true);
-            join3.setVisible(false);
-            join4.setVisible(false);
-        } // showsecond
-
-        // 이전으로 - 첫번째 화면으로
-        public void backfirst(ActionEvent event) {
-            join1.setVisible(true);
-            join2.setVisible(false);
-            join3.setVisible(false);
-            join4.setVisible(false);
-        } // backfirst
-
-        // 데이터 보내기
-        public void sendData(List<memberModel> memlist) {
-        /*this.memlist = memlist;*/
-
-            memberModel mem = memlist.get(memlist.size() - 1);
-            rid.setText(mem.getId());
-            rname.setText(mem.getName());
-            rgen.setText(mem.getGender());
-            rtel.setText(mem.getTel());
-            rbirth.setText(mem.getBday());
-            raddr1.setText(mem.getAddr1());
-            raddr2.setText(mem.getAddr2());
-            raddr3.setText(mem.getAddr3());
-            raddr4.setText(mem.getAddr4());
-            remail.setText(mem.getEmail());
-            rtalk.setText(mem.getMsg());
-
-        } // sendData
-
-        // 다음으로 - 세번쨰 화면으로 이동
-        public void showthird(ActionEvent event) {
-            // 새로운 회원
-            String format = "yyyy-MM-dd";
-            SimpleDateFormat sdf = new SimpleDateFormat(format);
-            String regdate = sdf.format(new Date());
-            String bday = year.getSelectionModel().getSelectedItem()
-                    + "-" + mon.getSelectionModel().getSelectedItem() + "-" + day.getSelectionModel().getSelectedItem();
-
-            String emailA = email.getText() + "@" + www.getSelectionModel().getSelectedItem();
-
-            if (uid.getText().equals("")) {
-                showWarn("아이디를 입력하세요!!");
-                uid.requestFocus();
-            } else if (pw.getText().equals("")) {
-                showWarn("비밀번호를 입력하세요!!");
-                pw.requestFocus();
-            } else if (!pw.getText().equals(pwok.getText())) {
-                showWarn("비밀번호가 동일하지 않습니다!!");
-            } else if (name.getText().equals("")) {
-                showWarn("이름을 입력하세요!!");
-                name.requestFocus();
-            } else if (gen.equals("")) {
-                showWarn("성별을 선택하세요!!");
-            } else if (tel.getText().equals("")) {
-                showWarn("전화번호를 입력하세요!!");
-                tel.requestFocus();
-            } else if (bday.equals("")) {
-                showWarn("생년월일을 선택하세요!!");
-            } else if (addr1.getText().equals("")) {
-                showWarn("주소를 입력하세요!!");
-                addr1.requestFocus();
-            } else if (addr2.getText().equals("")) {
-                showWarn("주소를 입력하세요!!");
-                addr2.requestFocus();
-            } else if (addr3.getText().equals("")) {
-                showWarn("주소를 입력하세요!!");
-                addr3.requestFocus();
-            } else if (addr4.getText().equals("")) {
-                showWarn("주소를 입력하세요!!");
-                addr4.requestFocus();
-            } else if (email.getText().equals("")) {
-                showWarn("이메일을 입력하세요!!");
-                email.requestFocus();
-            } else if (msg.equals("")) {
-                showWarn("문자수신을 선택하세요!!");
-            } else {
-                memlist.add(new memberModel(String.valueOf(mno += 1) + "", uid.getText(), pw.getText(), name.getText(), bday, gen,
-                        addr1.getText(), addr2.getText(), addr3.getText(), addr4.getText(), tel.getText(), emailA, msg, regdate));
-
-                sendData(memlist);
-
-                join1.setVisible(false);
-                join2.setVisible(false);
-                join3.setVisible(true);
-                join4.setVisible(false);
-            } // if-else
-        } // showthird
-
-        // 경고창
-        private void showWarn(String s) {
+            renttv.setItems(rentlist);
+        } else {
             Alert warn = new Alert(Alert.AlertType.WARNING);
-            warn.setTitle("오류!!");
+            warn.setTitle(":: 변경 불가 일정 ::");
             warn.setHeaderText(null);
-            warn.setContentText(s);
+            warn.setContentText("이미 취소된 예약일정입니다.");
             warn.showAndWait();
         }
 
-        // 문자수신
-        public void chyes(ActionEvent event) {
-            if (checkAggree3 == 0) msg = "yes";
-            else msg = "";
-        } // chyes
+    }
 
-        public void chno(ActionEvent event) {
-            if (checkAggree3 == 0) msg = "no";
-            else msg = "";
-        } // chno
+    // 회원가입 첫 페이지
+    public void showfirst(Event e) {
+        join1.setVisible(true);
+        join2.setVisible(false);
+        join3.setVisible(false);
+        join4.setVisible(false);
+    }// showfirst
 
-        // 우편번호 찾기
-        public void showaddr(ActionEvent event) throws Exception {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("../../../main/resources/fxml/addr.fxml"));
-            Parent root = loader.load();
+    // 버튼 사라지게하기 - 동의하면 다시 나타나게
+    public void showbtn(ActionEvent ae) {
+        if (checkAggree == 1) {
+            nextbtn.setDisable(true);
+            checkAggree = 0;
+        } else {
+            nextbtn.setDisable(false);
+            checkAggree = 1;
+        }
+    } // showbtn
 
-            addrController ac = loader.getController();
+    // 성별 - 정리
+    public void chwo(ActionEvent event) {
+        if (checkAggree2 == 0) gen = "여성";
+        else gen = "";
+    } // chwo
 
+    public void chma(ActionEvent event) {
+        if (checkAggree2 == 0) gen = "남성";
+        else gen = "";
+    } // chma
 
-            Stage stage = new Stage();
-            stage.setScene(new Scene(root));
-            stage.setTitle("주소");
-            ac.sendData(addr1, addr2, addr3, stage);
-            stage.show();
+    // 다음으로 - 두번째 화면으로
+    public void showsecond(ActionEvent event) throws Exception {
+        join1.setVisible(false);
+        join2.setVisible(true);
+        join3.setVisible(false);
+        join4.setVisible(false);
+    } // showsecond
 
+    // 이전으로 - 첫번째 화면으로
+    public void backfirst(ActionEvent event) {
+        join1.setVisible(true);
+        join2.setVisible(false);
+        join3.setVisible(false);
+        join4.setVisible(false);
+    } // backfirst
 
-        } // showaddr
+    // 데이터 보내기
+    public void sendData(List<memberModel> memlist) {
+        /*this.memlist = memlist;*/
 
-        // 이전으로 - 두번째 화면으로 이동
-        public void backsecond(ActionEvent event) {
-            join1.setVisible(false);
-            join2.setVisible(true);
-            join3.setVisible(false);
-            join4.setVisible(false);
-        } // backsecond
+        memberModel mem = memlist.get(memlist.size() - 1);
+        rid.setText(mem.getId());
+        rname.setText(mem.getName());
+        rgen.setText(mem.getGender());
+        rtel.setText(mem.getTel());
+        rbirth.setText(mem.getBday());
+        raddr1.setText(mem.getAddr1());
+        raddr2.setText(mem.getAddr2());
+        raddr3.setText(mem.getAddr3());
+        raddr4.setText(mem.getAddr4());
+        remail.setText(mem.getEmail());
+        rtalk.setText(mem.getMsg());
 
-        // 다음으로 - 네번째 화면으로 이동
-        public void showfourth(ActionEvent event) {
+    } // sendData
+
+    // 다음으로 - 세번쨰 화면으로 이동
+    public void showthird(ActionEvent event) {
+        // 새로운 회원
+        String format = "yyyy-MM-dd";
+        SimpleDateFormat sdf = new SimpleDateFormat(format);
+        String regdate = sdf.format(new Date());
+        String bday = year.getSelectionModel().getSelectedItem()
+                + "-" + mon.getSelectionModel().getSelectedItem() + "-" + day.getSelectionModel().getSelectedItem();
+
+        String emailA = email.getText() + "@" + www.getSelectionModel().getSelectedItem();
+
+        if (uid.getText().equals("")) {
+            showWarn("아이디를 입력하세요!!");
+            uid.requestFocus();
+        } else if (pw.getText().equals("")) {
+            showWarn("비밀번호를 입력하세요!!");
+            pw.requestFocus();
+        } else if (!pw.getText().equals(pwok.getText())) {
+            showWarn("비밀번호가 동일하지 않습니다!!");
+        } else if (name.getText().equals("")) {
+            showWarn("이름을 입력하세요!!");
+            name.requestFocus();
+        } else if (gen.equals("")) {
+            showWarn("성별을 선택하세요!!");
+        } else if (tel.getText().equals("")) {
+            showWarn("전화번호를 입력하세요!!");
+            tel.requestFocus();
+        } else if (bday.equals("")) {
+            showWarn("생년월일을 선택하세요!!");
+        } else if (addr1.getText().equals("")) {
+            showWarn("주소를 입력하세요!!");
+            addr1.requestFocus();
+        } else if (addr2.getText().equals("")) {
+            showWarn("주소를 입력하세요!!");
+            addr2.requestFocus();
+        } else if (addr3.getText().equals("")) {
+            showWarn("주소를 입력하세요!!");
+            addr3.requestFocus();
+        } else if (addr4.getText().equals("")) {
+            showWarn("주소를 입력하세요!!");
+            addr4.requestFocus();
+        } else if (email.getText().equals("")) {
+            showWarn("이메일을 입력하세요!!");
+            email.requestFocus();
+        } else if (msg.equals("")) {
+            showWarn("문자수신을 선택하세요!!");
+        } else {
+            memlist.add(new memberModel(String.valueOf(mno += 1) + "", uid.getText(), pw.getText(), name.getText(), bday, gen,
+                    addr1.getText(), addr2.getText(), addr3.getText(), addr4.getText(), tel.getText(), emailA, msg, regdate));
+
+            sendData(memlist);
+
             join1.setVisible(false);
             join2.setVisible(false);
-            join3.setVisible(false);
-            join4.setVisible(true);
+            join3.setVisible(true);
+            join4.setVisible(false);
+        } // if-else
+    } // showthird
 
-            String format = "yyyy-MM-dd";
-            SimpleDateFormat sdf = new SimpleDateFormat(format);
-            String regdate = sdf.format(new Date());
-            String bday = year.getSelectionModel().getSelectedItem()
-                    + "-" + mon.getSelectionModel().getSelectedItem() + "-" + day.getSelectionModel().getSelectedItem();
+    // 경고창
+    private void showWarn(String s) {
+        Alert warn = new Alert(Alert.AlertType.WARNING);
+        warn.setTitle("오류!!");
+        warn.setHeaderText(null);
+        warn.setContentText(s);
+        warn.showAndWait();
+    }
 
-            String emailA = email.getText() + "@" + www.getSelectionModel().getSelectedItem();
+    // 문자수신
+    public void chyes(ActionEvent event) {
+        if (checkAggree3 == 0) msg = "yes";
+        else msg = "";
+    } // chyes
 
-            memberModel md = new memberModel("", uid.getText(), pw.getText(), name.getText(), bday, gen,
-                    addr1.getText(), addr2.getText(), addr3.getText(), addr4.getText(), tel.getText(), emailA, msg, regdate);
+    public void chno(ActionEvent event) {
+        if (checkAggree3 == 0) msg = "no";
+        else msg = "";
+    } // chno
 
-            memberDAO.savedb(md);
-        } // showfourth
+    // 우편번호 찾기
+    public void showaddr(ActionEvent event) throws Exception {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("../../../main/resources/fxml/addr.fxml"));
+        Parent root = loader.load();
 
-        // 로그인 창 띄우기
-        public void showlogin(ActionEvent event) throws Exception {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("../fxml/login.fxml"));
-            Parent root = loader.load();
+        addrController ac = loader.getController();
 
-            Stage stage = new Stage();
-            stage.setScene(new Scene(root));
-            stage.setTitle("로그인");
-            stage.show();
-        } // showlogin
 
-        public void showinfo(Event event) {
+        Stage stage = new Stage();
+        stage.setScene(new Scene(root));
+        stage.setTitle("주소");
+        ac.sendData(addr1, addr2, addr3, stage);
+        stage.show();
 
-        } // showinfo
 
-        public void update(ActionEvent event) {
-        } // update
+    } // showaddr
 
-        public void out(ActionEvent event) {
-        } // out
+    // 이전으로 - 두번째 화면으로 이동
+    public void backsecond(ActionEvent event) {
+        join1.setVisible(false);
+        join2.setVisible(true);
+        join3.setVisible(false);
+        join4.setVisible(false);
+    } // backsecond
 
-        public void m1() throws Exception {
-            SingleSelectionModel<Tab> sm = memberTab.getSelectionModel();
-            sm.select(1);
-        }
+    // 다음으로 - 네번째 화면으로 이동
+    public void showfourth(ActionEvent event) {
+        join1.setVisible(false);
+        join2.setVisible(false);
+        join3.setVisible(false);
+        join4.setVisible(true);
 
-        public void m2() throws Exception {
-            SingleSelectionModel<Tab> sm = memberTab.getSelectionModel();
-            sm.select(2);
-        }
+        String format = "yyyy-MM-dd";
+        SimpleDateFormat sdf = new SimpleDateFormat(format);
+        String regdate = sdf.format(new Date());
+        String bday = year.getSelectionModel().getSelectedItem()
+                + "-" + mon.getSelectionModel().getSelectedItem() + "-" + day.getSelectionModel().getSelectedItem();
 
+        String emailA = email.getText() + "@" + www.getSelectionModel().getSelectedItem();
+
+        memberModel md = new memberModel("", uid.getText(), pw.getText(), name.getText(), bday, gen,
+                addr1.getText(), addr2.getText(), addr3.getText(), addr4.getText(), tel.getText(), emailA, msg, regdate);
+
+        memberDAO.savedb(md);
+    } // showfourth
+
+    // 로그인 창 띄우기
+    public void showlogin(ActionEvent event) throws Exception {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("../fxml/login.fxml"));
+        Parent root = loader.load();
+
+        Stage stage = new Stage();
+        stage.setScene(new Scene(root));
+        stage.setTitle("로그인");
+        stage.show();
+    } // showlogin
+
+    public void showinfo(Event event) {
+
+    } // showinfo
+
+    public void update(ActionEvent event) {
+    } // update
+
+    public void out(ActionEvent event) {
+    } // out
+
+    public void m1() throws Exception {
+        SingleSelectionModel<Tab> sm = memberTab.getSelectionModel();
+        sm.select(1);
+    }
+
+    public void m2() throws Exception {
+        SingleSelectionModel<Tab> sm = memberTab.getSelectionModel();
+        sm.select(2);
+    }
+
+    public void updateK(ActionEvent event) {
+
+    }
 } // class
