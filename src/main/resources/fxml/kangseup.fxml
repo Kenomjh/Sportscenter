@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="505.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mxk.v1.controller.kangseupController">
+    <children>
+        <TabPane fx:id="kangseupTab" prefHeight="505.0" prefWidth="800.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+            <tabs>
+                <Tab text="강습안내">
+                    <content>
+                        <StackPane prefHeight="150.0" prefWidth="200.0">
+                            <children>
+                                <AnchorPane fx:id="swim" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                    <children>
+                                        <Label layoutX="50.0" layoutY="14.0" text="강습안내">
+                                            <font>
+                                                <Font name="System Bold" size="18.0" />
+                                            </font>
+                                        </Label>
+                                        <ImageView fitHeight="323.0" fitWidth="672.0" layoutX="69.0" layoutY="63.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@../../img/20160920-0920-001.png" />
+                                            </image>
+                                        </ImageView>
+                                        <ImageView fitHeight="250.0" fitWidth="350.0" layoutX="275.0" layoutY="100.0" opacity="0.23" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@../../img/KakaoTalk_20160920_102541006.png" />
+                                            </image>
+                                        </ImageView>
+                                        <Button layoutX="182.0" layoutY="423.0" mnemonicParsing="false" onAction="#k0" prefWidth="100.0" text="수영" />
+                                        <Button layoutX="350.0" layoutY="423.0" mnemonicParsing="false" onAction="#k0_t" prefWidth="100.0" text="테니스" />
+                                        <Button layoutX="517.0" layoutY="423.0" mnemonicParsing="false" onAction="#k1" prefWidth="100.0" text="강습신청" />
+                                    </children>
+                                </AnchorPane>
+                                <AnchorPane fx:id="tennis" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" visible="false">
+                                    <children>
+                                        <Label layoutX="50.0" layoutY="14.0" text="강습안내">
+                                            <font>
+                                                <Font name="System Bold" size="18.0" />
+                                            </font>
+                                        </Label>
+                                        <ImageView fitHeight="327.0" fitWidth="724.0" layoutX="48.0" layoutY="67.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+
+                                                <Image url="@../../img/20160920-0920-003.png" />
+                                            </image>
+                                        </ImageView>
+                                        <ImageView fitHeight="250.0" fitWidth="350.0" layoutX="275.0" layoutY="113.0" opacity="0.23" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@../../img/KakaoTalk_20160920_102541201.png" />
+                                            </image>
+                                        </ImageView>
+                                        <Button layoutX="182.0" layoutY="423.0" mnemonicParsing="false" onAction="#k0" prefWidth="100.0" text="수영" />
+                                        <Button layoutX="350.0" layoutY="423.0" mnemonicParsing="false" onAction="#k0_t" prefWidth="100.0" text="테니스" />
+                                        <Button layoutX="517.0" layoutY="423.0" mnemonicParsing="false" onAction="#k1" prefWidth="100.0" text="강습신청" />
+                                    </children>
+                                </AnchorPane>
+                            </children>
+                        </StackPane>
+                    </content>
+                </Tab>
+                <Tab text="강습신청">
+                    <content>
+                        <StackPane prefHeight="150.0" prefWidth="200.0">
+                            <children>
+                                <AnchorPane fx:id="step1" prefHeight="200.0" prefWidth="200.0" visible="false">
+                                    <children>
+                                        <Label layoutX="50.0" layoutY="14.0" text="강습 약관 동의">
+                                            <font>
+                                                <Font size="18.0" />
+                                            </font>
+                                        </Label>
+                                        <TextArea layoutX="50.0" layoutY="45.0" prefHeight="350.0" prefWidth="700.0" text="회원등록기간&#10;        울릉도시민&#10;            인터넷접수 : 아쿠아(매월 17일 22시~23일 23시 59분), 일반강습(매월 18일 22시~23일 23시 59분)&#10;            현장접수 : 매월 25일~말일(선착순 마감)&#10;        ※울릉도시민이라 함은 주민등록상 주소지를 기준으로 합니다.&#10;        ※현장접수 첫날인 매월 25일에는 반드시 울릉도민임을 증명할 수 있는 신분증을 지참 하셔야 합니다.&#10;        타시 거주자&#10;            인터넷접수:매월 19일 00시~23일 23시 59분&#10;            현장접수:매월 26일~말일(선착순 마감)&#10;        현장접수 시간&#10;            평일 : 06:00~21시&#10;            토요일 : 06:00~20시&#10;            일요일 및 공휴일 : 09:00~17시&#10;    ※접수기간 이외에는 접수가 불가하며, 1인 1강습에 한해 접수 가능하니 이점 양해바랍니다.&#10;    ※수영을 처음 배우시는 분은 [입문반]으로 등록해주시기 바랍니다.&#10;    ※현장접수시 강습신청하시는 분외에 다른 분의 강습신청은 불가합니다. (가족일 경우 증빙서류-가족관계확인서,건강보험증 등)&#10;    주의사항&#10;        타시 거주시민이 접수첫날(인터넷 18일, 현장 25일)에 등록하게 되면 취소됩니다.(특히, 인터넷 접수하시는분은 주의 하시기 바랍니다.)&#10;        거주지역이 허위로 밝혀질 경우 등록 취소됩니다.&#10;        이사 등으로 주소지가 변경되신분은 동 주민센터에 가셔서 현재 거주지로 주소를 정정하시기 바랍니다.(주민등록증 뒷변 주소지 정정 및 인터넷 개인정보 수정요망-주소, 전화번호 등)&#10;        현장접수 첫날 오실때는 기존 회원은 회원카드와 신분증을 지참하시기바랍니다. 신규 회원은 신분증을 반드시 지참하시기 바랍니다.&#10;        강습전용시간에는 자유수영이 불가합니다.&#10;            월~토 : 08:30~13:00(일반강습 전용시간), 15:00~16:00(아쿠아 전용시간) ⇨ 자유수영 불가&#10;        강습입장시간 : 해당강습시간 시작 30분 전부터 시작 후 30분까지 입장 가능합니다.&#10;        아쿠아강습은 시작 30분 전부터 시작 후 30분까지 입장 가능합니다.&#10;        공휴일에는 강습이 없으며 자유수영으로 대체합니다. 이점 양해하여 주시기 바랍니다.&#10;        매월 첫째, 셋째 일요일은 휴장합니다.&#10;    사용료 할인&#10;        울릉도시 체육시설운영관리조례 제11조에 의거, 만65세 이상 노인은 성인요금의 50%할인&#10;        울릉도시 체육시설운영관리조례 제11조에 의거, 만13세부터 만55세 여성 강습회원료 10%할인&#10;        장애인복지시행령 제17조 별표2(50%)&#10;        국가유공자등 예우 및 지원에 관한 법률 제86조(50%)&#10;        그린카드 소지자 (일일입장료 10%) : 월강습은 해당되지 않으며, 본인만 가능합니다.(이용대장 등록)&#10;    ※위 할인사항은 중복할인은 되지 않습니다.&#10;    환불안내(근거:소비자분쟁해결기준(공정거래위원회 고시 제2009-1호)에 의하여 환불)&#10;        환불금액&#10;            가.사업자의 귀책사유(강습반 폐지등)로 인한 계약해제일 경우:전액환급&#10;            나.소비자의 귀책사유로 인한 계약해제일 경우&#10;                1)개강전:강습료의 10% 공제 후 환급&#10;                2)개강후:강습료의 10%와 취소일까지 이용일수에 대한 금액을 공제 후 환급&#10;        환불신청시 준비서류&#10;            가.환불신청서 작성, 본인통장 계좌&#10;            나.상해로 인한 환불신청서는 진료확인서 추가 제출&#10;    ※환불신청서는 직접 방문하여 작성하여야 하나 부득이 방문이 어려우신 경우에는 상담 후 팩스 가능하며 통장계좌는 등록자와 반드시 동일한 명의여햐 합니다. 본인명의 통장이 없을 경우 가족 통장계좌번호와 가족임을 증명할 수 있는 증빙자료 제출(등본, 건강보험증 등)&#10;&#10;&#10;    수영장 이용 준수사항&#10;        샤워실에서는 마사지 및 때밀이는 절대 금지합니다(수영조로 들어가실 때에는 샤워실에서 전신 샤워 후 입장하여 주시기 바랍니다)&#10;        미취학 및 120cm 이하 어린이는 출입이 제한됩니다(보호자 동반하여도 입장 불가)&#10;        체육시설의 설치 이용에 관한 법률 시행규칙 제29조에 의거 수영조의 조절, 침전물의 유무 및 사고유무를 확인하기 위하여 매시 50분마다 수영조안에서 수영자를 밖으로 나오도록 하고, 수영조 점검을 위하여 10분간 휴식합니다.&#10;        체육시설의 제규정(준수사항, 안전수칙)을 위반시 회원자격이 제한 될 수 있습니다.&#10;        고혈압, 심근경색, 협심증 등 심혈관 질환이 있으신 분은 수영을 삼가 하시기 바랍니다.&#10;        자유수영 시에는 안전을 위해 킥판, 오리발, 튜브, 스노쿨, 물놀이 기구 등 사용을 금지합니다.&#10;        접수하신 강습반 이외에는 강습을 받을 수 없으며, 접수 후 강습반에 들어오시지 않을 시에는 강습 접수에 제한을 받으실 수 있습니다.&#10;        본인 지병 및 과실로 인한 사고는 책임지지 않습니다.&#10;        강습 입장시간 : 해당강습 시간 시작 30분전부터 시작 후 30분까지 입장 가능합니다. ">
+                                            <font>
+                                                <Font size="14.0" />
+                                            </font>
+                                        </TextArea>
+                                        <CheckBox layoutX="284.0" layoutY="405.0" mnemonicParsing="false" onAction="#showbtn" text="상기 약관을 모두 읽었으며 동의합니다." />
+                                        <Button fx:id="nextBtn" disable="true" layoutX="368.0" layoutY="443.0" mnemonicParsing="false" onAction="#nextStep1" text="다음단계" />
+                                    </children>
+                                </AnchorPane>
+                                <AnchorPane fx:id="step2" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" visible="false">
+                                    <children>
+                                        <Label layoutX="50.0" layoutY="14.0" text="강습신청">
+                                            <font>
+                                                <Font name="System Bold" size="18.0" />
+                                            </font>
+                                        </Label>
+                                        <Label layoutX="152.0" layoutY="50.0" text="아이디" />
+                                        <Label layoutX="164.0" layoutY="83.0" text="이름" />
+                                        <Label layoutX="164.0" layoutY="116.0" text="주소" />
+                                        <Label layoutX="140.0" layoutY="148.0" text="전화번호" />
+                                        <Label layoutX="140.0" layoutY="181.0" text="강습선택" />
+                                        <Label layoutX="140.0" layoutY="214.0" text="기간선택" />
+                                        <SplitMenuButton layoutX="212.0" layoutY="177.0" mnemonicParsing="false" text="강습종목선택">
+                                            <items>
+                                                <MenuItem mnemonicParsing="false" text="수영                  " />
+                                                <MenuItem mnemonicParsing="false" text="테니스" />
+                                            </items>
+                                        </SplitMenuButton>
+                                        <SplitMenuButton layoutX="335.0" layoutY="177.0" mnemonicParsing="false" text="프로그램선택">
+                                            <items>
+                                                <MenuItem mnemonicParsing="false" text="어린이반            " />
+                                                <MenuItem mnemonicParsing="false" text="성인반" />
+                                                <MenuItem mnemonicParsing="false" text="직장반" />
+                                            </items>
+                                        </SplitMenuButton>
+                                        <TextField fx:id="userId" disable="true" layoutX="212.0" layoutY="46.0" />
+                                        <TextField fx:id="userName" disable="true" layoutX="212.0" layoutY="79.0" />
+                                        <TextField fx:id="addr" disable="true" layoutX="212.0" layoutY="112.0" prefHeight="23.0" prefWidth="422.0" />
+                                        <TextField fx:id="tel" disable="true" layoutX="212.0" layoutY="144.0" prefHeight="23.0" prefWidth="421.0" />
+                                        <Button layoutX="681.0" layoutY="408.0" mnemonicParsing="false" onAction="#nextStep2" text="신청" />
+                                        <SplitMenuButton layoutX="212.0" layoutY="210.0" mnemonicParsing="false" text="강습기간선택">
+                                            <items>
+                                                <MenuItem mnemonicParsing="false" text="10월(1일~31일) " />
+                                                <MenuItem mnemonicParsing="false" text="11월(1일~30일)" />
+                                                <MenuItem mnemonicParsing="false" text="12월(1일~31일)" />
+                                            </items>
+                                        </SplitMenuButton>
+                                        <TextField layoutX="211.0" layoutY="244.0" />
+                                        <Label layoutX="139.0" layoutY="248.0" text="예상금액" />
+                                    </children>
+                                </AnchorPane>
+                                <AnchorPane fx:id="step3" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                    <children>
+                                        <Label layoutX="50.0" layoutY="14.0" text="강습신청확인">
+                                            <font>
+                                                <Font name="System Bold" size="18.0" />
+                                            </font>
+                                        </Label>
+                                        <Label layoutX="152.0" layoutY="50.0" text="아이디" />
+                                        <Label layoutX="164.0" layoutY="83.0" text="이름" />
+                                        <Label layoutX="164.0" layoutY="116.0" text="주소" />
+                                        <Label layoutX="140.0" layoutY="148.0" text="전화번호" />
+                                        <Label layoutX="140.0" layoutY="181.0" text="강습선택" />
+                                        <Label layoutX="140.0" layoutY="214.0" text="기간선택" />
+                                        <SplitMenuButton fx:id="selectk" layoutX="212.0" layoutY="177.0" mnemonicParsing="false" text="강습종목선택">
+                                            <items>
+                                                <MenuItem mnemonicParsing="false" text="수영                  " />
+                                                <MenuItem mnemonicParsing="false" text="테니스" />
+                                            </items>
+                                        </SplitMenuButton>
+                                        <SplitMenuButton layoutX="335.0" layoutY="177.0" mnemonicParsing="false" text="프로그램선택">
+                                            <items>
+                                                <MenuItem mnemonicParsing="false" text="어린이반            " />
+                                                <MenuItem mnemonicParsing="false" text="성인반" />
+                                                <MenuItem mnemonicParsing="false" text="직장반" />
+                                            </items>
+                                        </SplitMenuButton>
+                                        <TextField fx:id="userId2" layoutX="212.0" layoutY="46.0" />
+                                        <TextField fx:id="userName2" layoutX="212.0" layoutY="79.0" />
+                                        <TextField fx:id="addr2" layoutX="212.0" layoutY="112.0" prefHeight="23.0" prefWidth="422.0" />
+                                        <TextField fx:id="tel2" layoutX="212.0" layoutY="144.0" prefHeight="23.0" prefWidth="421.0" />
+                                        <TextField layoutX="258.0" layoutY="315.0" />
+                                        <Button layoutX="326.0" layoutY="422.0" mnemonicParsing="false" onAction="#g2appliction" text="예약정보페이지로 이동" />
+                                        <Label layoutX="140.0" layoutY="253.0" text="강습신청이 완료되었습니다.">
+                                            <font>
+                                                <Font size="15.0" />
+                                            </font>
+                                        </Label>
+                                        <Label layoutX="285.0" layoutY="285.0" text="까지 입금이 완료되면 신청이 확정됩니다.">
+                                            <font>
+                                                <Font size="15.0" />
+                                            </font>
+                                        </Label>
+                                        <Label layoutX="140.0" layoutY="318.0" text="입금하실 금액은 ">
+                                            <font>
+                                                <Font size="15.0" />
+                                            </font>
+                                        </Label>
+                                        <Label layoutX="407.0" layoutY="317.0" text="입니다.">
+                                            <font>
+                                                <Font size="15.0" />
+                                            </font>
+                                        </Label>
+                                        <TextField layoutX="140.0" layoutY="283.0" />
+                                        <SplitMenuButton layoutX="212.0" layoutY="210.0" mnemonicParsing="false" text="강습기간선택">
+                                            <items>
+                                                <MenuItem mnemonicParsing="false" text="10월(1일~31일) " />
+                                                <MenuItem mnemonicParsing="false" text="11월(1일~30일)" />
+                                                <MenuItem mnemonicParsing="false" text="12월(1일~31일)" />
+                                            </items>
+                                        </SplitMenuButton>
+                                    </children>
+                                </AnchorPane>
+                            </children>
+                        </StackPane>
+                    </content>
+                </Tab>
+            </tabs>
+        </TabPane>
+    </children>
+</Pane>

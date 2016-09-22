@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="270.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="mxk.v1.controller.loginController">
+   <children>
+      <Label layoutX="54.0" layoutY="52.0" text="아이디">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="47.0" layoutY="85.0" text="비밀번호">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="userid" layoutX="111.0" layoutY="49.0" />
+      <PasswordField fx:id="passwd" layoutX="111.0" layoutY="82.0" />
+      <Button layoutX="85.0" layoutY="115.0" mnemonicParsing="false" onAction="#loginpg" text="로그인" />
+      <Button layoutX="148.0" layoutY="115.0" mnemonicParsing="false" onAction="#joinpg" text="회원가입" />
+      <ImageView fitHeight="100.0" fitWidth="70.0" layoutX="113.0" layoutY="161.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="/img/tlogofinal.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="logintxt" layoutX="56.0" layoutY="21.0" text="로그인 후 이용 가능합니다. " textFill="#e80b0b">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+   </children>
+</AnchorPane>

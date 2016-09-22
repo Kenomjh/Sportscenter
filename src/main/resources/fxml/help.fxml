@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="350.0" prefWidth="400.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label layoutX="205.0" layoutY="37.0" text="울릉도민체육관 프로그램 ">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="25.0" layoutY="126.0" text="Version 1.0.0" />
+      <Label layoutX="52.0" layoutY="274.0" text="Copyright(c) 2016                     All rights reserved" />
+      <Label layoutX="139.0" layoutY="62.0" text="(Ulleungdo gym application program)" />
+      <Label layoutX="23.0" layoutY="149.0" text="Bulit on September 23.2016" />
+      <Label layoutX="23.0" layoutY="173.0" text="Licensed to KKMC" />
+      <Label layoutX="23.0" layoutY="197.0" text="Powered by open-source software" />
+      <ImageView fitHeight="23.0" fitWidth="70.0" layoutX="162.0" layoutY="270.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/tlogo2.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

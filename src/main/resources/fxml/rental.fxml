@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.text.Font?>
+
+<Pane fx:id="rentalPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="505.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mxk.v1.controller.rentalController">
+   <children>
+       <TabPane fx:id="rentalTab" prefHeight="505.0" prefWidth="800.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+           <tabs>
+               <Tab text="대관안내">
+                   <content>
+                       <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                           <children>
+                               <ImageView fitHeight="300.0" fitWidth="450.0" layoutX="14.0" layoutY="91.0" pickOnBounds="true" preserveRatio="true">
+                                   <image>
+                                       <Image url="/img/soccer1.jpg" />
+                                   </image>
+                               </ImageView>
+                               <ImageView fitHeight="240.0" fitWidth="340.0" layoutX="470.0" layoutY="119.0" pickOnBounds="true" preserveRatio="true">
+                                   <image>
+                                       <Image url="/img/20160913-1741-10.png" />
+                                   </image>
+                               </ImageView>
+                               <Label layoutX="50.0" layoutY="14.0" text="축구장 대관 안내">
+                                   <font>
+                                       <Font name="System Bold" size="18.0" />
+                                   </font>
+                               </Label>
+                           </children>
+                       </AnchorPane>
+                   </content></Tab>
+               <Tab text="예약신청">
+                   <content>
+                       <StackPane prefHeight="150.0" prefWidth="200.0">
+                           <children>
+                               <AnchorPane fx:id="apg" prefHeight="200.0" prefWidth="200.0">
+                                   <children>
+                                       <Label layoutX="50.0" layoutY="14.0" text="대관 약관 동의">
+                                           <font>
+                                               <Font size="18.0" />
+                                           </font>
+                                       </Label>
+                                       <TextArea layoutX="50.0" layoutY="45.0" prefHeight="350.0" prefWidth="700.0" text="1. 경기장내에서는 허가받지 않은 상행위등 공익상 부적당한 행위를 금합니다.&#10;&#10;2. 경기장내·외에서는 취사행위와 음식물반입을 금합니다.&#10;&#10;3. 경기장 및 대기실, 복도, 화장실등 실내에서는 금연구역입니다&#10;&#10;4. 시설의 파손시 사용자가 원상복구 또는 변상하여야 하며 경기장내에 화기 및 폭죽등을 소지하거나 &#10;    사용할 수 없습니다.&#10;&#10;5. 대관 신청 후 또는 사용중이라도 국가 또는 특별한 행사로 당 공단이 필요로하는 경우에는 사용을 &#10;    취소 또는 변경 할 수 있습니다.&#10;&#10;6. 경기장내에 임의로 시설물 광고물 등을 설치 할 수 없으며 필요시 사전승인을 득하셔야 하며 &#10;    행사 종료시 철거하셔야 합니다.&#10;&#10;7. 경기장의 안전예방에 최선을 다하여야 하며 사고발생시 사용자가 모든 책임을 집니다.&#10;&#10;8. 행사기간중 시설물을 깨끗이 사용하여야하며 발생된 쓰레기는 모두 종량제봉투에 담아 지정된 장소에&#10;    모아 두셔야 합니다.&#10;&#10;9. 행사기간중 각종 필요한 행정사항과 준비사항은 주최측에서 하셔야 합니다.&#10;&#10;10. 전용사용료는 납부일까지 납부하셔야 하며, 관계자의 영수증 제시 요구에 불응할 경우 대관을 &#10;      취소할 수 있습니다.&#10;&#10;11. 사용료(전용, 부속, 상업)납부와 관련하여 공단에서 예상금액 상당의 계약(지급)증권 또는 예치금을 &#10;      요구할 수 있으며, 불응시 대관을 불허 할 수 있습니다.&#10;&#10;12. 울릉군체육시설운영관리조례 제14조(사용료 및 입장료 반환)에 의거 사용허가를 받은 사람이 &#10;      사용개시일 전까지 미리 그 사용을 취소하는 경우 사용료의 2분의1을 반환합니다.&#10;&#10;13. 기타 사항은 안양시 체육시설운영관리조례 및 시행규칙을 적용합니다.">
+                                           <font>
+                                               <Font size="14.0" />
+                                           </font>
+                                       </TextArea>
+                                       <CheckBox layoutX="284.0" layoutY="405.0" mnemonicParsing="false" onAction="#showbtn" text="상기 약관을 모두 읽었으며 동의합니다." />
+                                       <Button fx:id="nextbtn" disable="true" layoutX="368.0" layoutY="443.0" mnemonicParsing="false" onAction="#g2rpg" text="다음단계" />
+                                   </children>
+                               </AnchorPane>
+                               <AnchorPane fx:id="rpg" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" visible="false">
+                                   <children>
+                                       <Label layoutX="50.0" layoutY="14.0" text="신청 정보 입력">
+                                           <font>
+                                               <Font name="System Bold" size="18.0" />
+                                           </font>
+                                       </Label>
+                                       <Label layoutX="154.0" layoutY="48.0" text="아이디" />
+                                       <Label layoutX="164.0" layoutY="83.0" text="이름" />
+                                       <Label layoutX="140.0" layoutY="116.0" text="전화번호" />
+                                       <Label layoutX="164.0" layoutY="147.0" text="주소" />
+                                       <Label layoutX="140.0" layoutY="180.0" text="대관날짜" />
+                                       <Label layoutX="140.0" layoutY="212.0" text="예약시간" />
+                                       <Label layoutX="140.0" layoutY="445.0" text="예상금액" />
+                                       <DatePicker fx:id="pdate" layoutX="212.0" layoutY="176.0" />
+                                       <TextField fx:id="userid" editable="false" layoutX="212.0" layoutY="44.0" />
+                                       <TextField fx:id="username" editable="false" layoutX="212.0" layoutY="79.0" />
+                                       <TextField fx:id="tel" editable="false" layoutX="212.0" layoutY="112.0" prefHeight="23.0" prefWidth="138.0" />
+                                       <TextField fx:id="addr" editable="false" layoutX="212.0" layoutY="144.0" prefHeight="23.0" prefWidth="421.0" />
+                                       <TextField fx:id="ppay" editable="false" layoutX="212.0" layoutY="441.0" />
+                                       <Button fx:id="nextbtn2" disable="true" layoutX="594.0" layoutY="441.0" mnemonicParsing="false" onAction="#g2crpg" text="신청" />
+                                       <Label layoutX="189.0" layoutY="272.0" text="본인은 단체를 대표하여 위 내용을 준수할 것을 약속하며 이행치 않을 경우에는" />
+                                       <Label layoutX="259.0" layoutY="296.0" text="울릉군시설관리공단의 규정에 따를 것을 서약합니다." />
+                                       <Label layoutX="348.0" layoutY="320.0" text="2016년 09월 05일" />
+                                       <Label layoutX="356.0" layoutY="342.0" text="신청인 :" />
+                                       <Label fx:id="uname" layoutX="406.0" layoutY="342.0" text="김형규" />
+                                       <Label layoutX="312.0" layoutY="366.0" text="울릉군시설관리공단 민과장 귀하" />
+                                       <CheckBox layoutX="332.0" layoutY="390.0" mnemonicParsing="false" onAction="#showbtn2" text="확인하고 서명합니다." />
+                              <ComboBox fx:id="ptime" layoutX="212.0" layoutY="208.0" onAction="#outppay" prefWidth="150.0" />
+                                   </children>
+                               </AnchorPane>
+                               <AnchorPane fx:id="crpg" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" visible="false">
+                                   <children>
+                                       <Label layoutX="50.0" layoutY="14.0" text="대관신청확인">
+                                           <font>
+                                               <Font name="System Bold" size="18.0" />
+                                           </font>
+                                       </Label>
+                                       <Label layoutX="152.0" layoutY="48.0" text="아이디" />
+                                       <Label layoutX="164.0" layoutY="83.0" text="이름" />
+                                       <Label layoutX="140.0" layoutY="116.0" text="전화번호" />
+                                       <Label layoutX="164.0" layoutY="148.0" text="주소" />
+                                       <Label layoutX="140.0" layoutY="181.0" text="신청날짜" />
+                                       <Label layoutX="140.0" layoutY="214.0" text="예약시간" />
+                                       <DatePicker fx:id="pdate2" disable="true" editable="false" layoutX="212.0" layoutY="176.0" />
+                                       <TextField fx:id="userid2" editable="false" layoutX="212.0" layoutY="44.0" />
+                                       <TextField fx:id="username2" editable="false" layoutX="212.0" layoutY="79.0" />
+                                       <TextField fx:id="addr2" editable="false" layoutX="212.0" layoutY="112.0" prefHeight="23.0" prefWidth="138.0" />
+                                       <TextField fx:id="tel2" editable="false" layoutX="212.0" layoutY="144.0" prefHeight="23.0" prefWidth="421.0" />
+                                       <TextField fx:id="ppay2" editable="false" layoutX="258.0" layoutY="315.0" />
+                                       <Button layoutX="330.0" layoutY="424.0" mnemonicParsing="false" onAction="#g2m2s" text="예약정보페이지로 이동" />
+                                       <Label layoutX="140.0" layoutY="253.0" text="대관신청이 완료되었습니다.">
+                                           <font>
+                                               <Font size="15.0" />
+                                           </font>
+                                       </Label>
+                                       <Label layoutX="285.0" layoutY="285.0" text="까지 입금이 완료되면 신청이 확정됩니다.">
+                                           <font>
+                                               <Font size="15.0" />
+                                           </font>
+                                       </Label>
+                                       <Label layoutX="140.0" layoutY="318.0" text="입금하실 금액은 ">
+                                           <font>
+                                               <Font size="15.0" />
+                                           </font>
+                                       </Label>
+                                       <Label layoutX="407.0" layoutY="317.0" text="입니다.">
+                                           <font>
+                                               <Font size="15.0" />
+                                           </font>
+                                       </Label>
+                                       <TextField fx:id="limitdate" editable="false" layoutX="140.0" layoutY="283.0" />
+                              <ComboBox fx:id="ptime2" disable="true" layoutX="213.0" layoutY="208.0" prefWidth="150.0" />
+                                   </children>
+                               </AnchorPane>
+                           </children>
+                       </StackPane>
+                   </content>
+               </Tab>
+           </tabs>
+       </TabPane>
+   </children>
+</Pane>

@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+            prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="mxk.v1.controller.mainController">
+    <top>
+        <VBox prefHeight="65.0" prefWidth="800.0" BorderPane.alignment="CENTER">
+            <children>
+                <MenuBar prefHeight="25.0">
+                    <menus>
+                        <Menu mnemonicParsing="false" text="센터">
+                            <items>
+                                <MenuItem mnemonicParsing="false" onAction="#g2c0" text="센터소개" />
+                                <MenuItem mnemonicParsing="false" onAction="#g2c1" text="주차안내" />
+                                <MenuItem mnemonicParsing="false" onAction="#g2c2" text="시설안내" />
+                                <MenuItem mnemonicParsing="false" onAction="#g2c3" text="오시는길" />
+                            </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="편집">
+                            <items>
+                                <MenuItem mnemonicParsing="false" text="찾기" />
+                                <SeparatorMenuItem mnemonicParsing="false" />
+                                <MenuItem mnemonicParsing="false" text="실행취소" />
+                                <SeparatorMenuItem mnemonicParsing="false" />
+                                <MenuItem mnemonicParsing="false" text="복사" />
+                                <MenuItem mnemonicParsing="false" text="붙여넣기" />
+                                <MenuItem mnemonicParsing="false" text="지우기" />
+                                <SeparatorMenuItem mnemonicParsing="false" />
+                                <MenuItem mnemonicParsing="false" text="인쇄" />
+                            </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="대관">
+                            <items>
+                                <MenuItem mnemonicParsing="false" onAction="#g2r0" text="대관안내" />
+                                <MenuItem mnemonicParsing="false" onAction="#g2r1" text="예약신청" />
+                            </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="강습">
+                            <items>
+                                <MenuItem mnemonicParsing="false" onAction="#g2k0" text="강습안내" />
+
+                                <MenuItem mnemonicParsing="false" onAction="#g2k1" text="강습신청" />
+                            </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="회원">
+                            <items>
+                                <MenuItem disable="true" mnemonicParsing="false" onAction="#g2m0" text="회원가입" />
+                                <MenuItem mnemonicParsing="false" onAction="#g2m1" text="회원정보" />
+                                <MenuItem mnemonicParsing="false" onAction="#g2m2" text="예약정보" />
+                            </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="도움말">
+                            <items>
+                                <MenuItem disable="true" mnemonicParsing="false" onAction="#g2h0" text="도움말" />
+                                <MenuItem disable="true" mnemonicParsing="false" onAction="#g2h1" text="최신버전 확인" />
+                                <MenuItem mnemonicParsing="false" onAction="#g2h2" text="프로그램 정보" />
+                            </items>
+                        </Menu>
+                    </menus>
+                </MenuBar>
+                <ToolBar prefHeight="25.0" prefWidth="800.0">
+                    <items>
+                        <AnchorPane prefHeight="30.0" prefWidth="780.0">
+                            <children>
+                                <Button mnemonicParsing="false" onAction="#g2c3" prefHeight="30.0" prefWidth="35.0">
+                                    <graphic>
+                                        <ImageView fitHeight="30.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@../img/centerinfo.png" />
+                                            </image>
+                                        </ImageView>
+                                    </graphic>
+                                </Button>
+                                <Button layoutX="36.0" mnemonicParsing="false" onAction="#g2r1" prefHeight="30.0" prefWidth="35.0">
+                                    <graphic>
+                                        <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@../img/rental.png" />
+                                            </image>
+                                        </ImageView>
+                                    </graphic>
+                                </Button>
+                                <Button layoutX="180.0" mnemonicParsing="false" onAction="#g2h2" prefHeight="30.0" prefWidth="35.0">
+                                    <graphic>
+                                        <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@../img/help.png" />
+                                            </image>
+                                        </ImageView>
+                                    </graphic>
+                                </Button>
+                                <Button layoutX="144.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="35.0">
+                                    <graphic>
+                                        <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@../img/printer.png" />
+                                            </image>
+                                        </ImageView>
+                                    </graphic>
+                                </Button>
+                                <Button layoutX="108.0" mnemonicParsing="false" onAction="#g2m2" prefHeight="30.0" prefWidth="35.0">
+                                    <graphic>
+                                        <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@../img/member.png" />
+                                            </image>
+                                        </ImageView>
+                                    </graphic>
+                                </Button>
+                                <Button layoutX="72.0" mnemonicParsing="false" onAction="#g2k1" prefHeight="30.0" prefWidth="35.0">
+                           <graphic>
+                                        <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@../img/kangseup.png" />
+                                            </image>
+                                        </ImageView>
+                           </graphic>
+                                </Button>
+                                <Button fx:id="exitbtn" layoutX="216.0" mnemonicParsing="false" onAction="#exitApp" prefHeight="30.0" prefWidth="35.0">
+                                    <graphic>
+                                        <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@../img/1473432457_system-delete-alt-02.png" />
+                                            </image>
+                                        </ImageView>
+                                    </graphic>
+                                </Button>
+                                <Label fx:id="username" layoutX="663.0" layoutY="7.0" text="" visible="false" />
+                                <Label fx:id="nim" layoutX="700.0" layoutY="7.0" text="님" visible="false" />
+                                <Button fx:id="logoutbtn" onAction="#logout" layoutX="719.0" layoutY="3.0" mnemonicParsing="false" text="로그아웃" visible="false" />
+                            </children>
+                        </AnchorPane>
+                    </items></ToolBar>
+            </children>
+        </VBox>
+    </top>
+   <bottom>
+      <AnchorPane prefHeight="40.0" prefWidth="800.0" BorderPane.alignment="CENTER">
+         <children>
+                <Label layoutX="250.0" layoutY="13.0" text="Copy Right © 2016." />
+                <ImageView fitHeight="30.0" fitWidth="60.0" layoutX="370.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../img/tlogo2.png" />
+                    </image>
+                </ImageView>
+                <Label layoutX="435.0" layoutY="13.0" text="All Rights Reserved." />
+            <Label fx:id="lbltime" layoutX="625.0" layoutY="13.0" text="Label" />
+         </children>
+      </AnchorPane>
+   </bottom>
+   <center>
+
+      <Pane fx:id="mainPane" prefHeight="505.0" prefWidth="800.0" BorderPane.alignment="CENTER">
+       <children>
+           <ImageView fitHeight="200.0" fitWidth="810.0" layoutY="54.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                   <Image url="@../img/titlemain.png" />
+               </image>
+               <VBox.margin>
+                   <Insets top="60.0" />
+               </VBox.margin>
+           </ImageView>
+           <ImageView fitHeight="300.0" fitWidth="810.0" layoutY="125.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                   <Image url="@../img/2015070825089513.jpg" />
+               </image>
+           </ImageView>
+       </children>
+       <opaqueInsets>
+           <Insets />
+       </opaqueInsets>
+       <BorderPane.margin>
+           <Insets />
+       </BorderPane.margin>
+       </Pane>
+   </center>
+</BorderPane>

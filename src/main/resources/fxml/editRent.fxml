@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane fx:id="editpane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mxk.v1.controller.editRController">
+   <children>
+      <ComboBox fx:id="ptime" layoutX="126.0" layoutY="229.0" onAction="#outppay" prefWidth="150.0" />
+      <TextField fx:id="addr" editable="false" layoutX="126.0" layoutY="165.0" prefHeight="23.0" prefWidth="420.0" />
+      <TextField fx:id="tel" editable="false" layoutX="126.0" layoutY="133.0" prefHeight="23.0" prefWidth="138.0" />
+      <TextField fx:id="username" editable="false" layoutX="126.0" layoutY="100.0" />
+      <TextField fx:id="userid" editable="false" layoutX="126.0" layoutY="65.0" />
+      <DatePicker fx:id="pdate" layoutX="126.0" layoutY="197.0" />
+      <Label layoutX="54.0" layoutY="233.0" text="예약시간" />
+      <Label layoutX="54.0" layoutY="201.0" text="대관날짜" />
+      <Label layoutX="78.0" layoutY="169.0" text="주소" />
+      <Label layoutX="54.0" layoutY="137.0" text="전화번호" />
+      <Label layoutX="78.0" layoutY="104.0" text="이름" />
+      <Label layoutX="68.0" layoutY="69.0" text="아이디" />
+      <Label layoutX="50.0" layoutY="14.0" text="축구장 예약 수정">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Button layoutX="231.0" layoutY="335.0" mnemonicParsing="false" onAction="#updateRent" text="예약수정" />
+      <TextField fx:id="ppay" editable="false" layoutX="126.0" layoutY="262.0" />
+      <Label layoutX="54.0" layoutY="266.0" text="예상금액" />
+      <Button layoutX="305.0" layoutY="335.0" mnemonicParsing="false" onAction="#deleteRent" text="예약취소" />
+   </children>
+</Pane>
