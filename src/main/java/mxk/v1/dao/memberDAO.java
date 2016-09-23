@@ -2,6 +2,8 @@ package mxk.v1.dao;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import mxk.v1.controller.mainController;
+import mxk.v1.model.kReservationModel;
 import mxk.v1.model.loginViewModel;
 import mxk.v1.model.memberModel;
 import mxk.v1.model.pReservationModel;
@@ -34,6 +36,8 @@ public class memberDAO {
     private static String deltereg = "delete from register where mno = (select mno from member where userid = ?)";
 
     private static String deltepre = "delete from prent where mno = (select mno from member where userid = ?)";
+
+    private static String ckrm = "select * from register join class using (lesson) where mno = ? order by rno desc";
 
     private static ObservableList ziplist;
 
@@ -202,6 +206,44 @@ public class memberDAO {
             ex.printStackTrace();
         } finally {
             closeConn(conn,pstmt,rs);
+        }
+
+        return result;
+    }
+
+    //회원강습정보 생성
+    public static List<kReservationModel> createkrm() {
+        Connection conn = null;
+        PreparedStatement pstmt = null;
+        ResultSet rs = null;
+        List<kReservationModel> result = new ArrayList<>();
+        String a = mainController.mlm.getMno();
+
+        try {
+            conn = openConn();
+            pstmt = conn.prepareStatement(ckrm);
+            pstmt.setString(1,a);
+
+            rs = pstmt.executeQuery();
+
+            while (rs.next()){
+                kReservationModel lm = new kReservationModel(
+                        rs.getString("rno"),
+                        rs.getString("lesson"),
+                        rs.getString("rldate"),
+                        rs.getString("lpay"),
+                        rs.getString("rtdate").substring(0,10),
+                        rs.getString("rting")
+                );
+
+                result.add(lm);
+            }
+
+
+        }catch (Exception e){
+            e.printStackTrace();
+        } finally {
+            closeConn(conn, pstmt,rs);
         }
 
         return result;

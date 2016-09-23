@@ -6,8 +6,7 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="517.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mxk.v1.controller.memberController"
-        stylesheets="/css/member.css">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="517.0" prefWidth="800.0" stylesheets="/css/member.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mxk.v1.controller.memberController">
    <children>
        <TabPane fx:id="memberTab" prefHeight="517.0" prefWidth="800.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
            <tabs>
@@ -80,7 +79,7 @@
                                    </children>
                                </Pane>
 
-                               <Pane fx:id="join2" prefHeight="477.0" prefWidth="800.0" visible="false" BorderPane.alignment="CENTER">
+                               <Pane fx:id="join2" prefHeight="477.0" prefWidth="800.0" BorderPane.alignment="CENTER">
                                    <children>
                                        <Button fx:id="prebtn" layoutX="653.0" layoutY="431.0" mnemonicParsing="false" onAction="#backfirst" text="이전으로" />
                                        <Button fx:id="next2btn" layoutX="730.0" layoutY="431.0" mnemonicParsing="false" onAction="#showthird" text="다음으로" />
@@ -332,7 +331,7 @@
                                                        </HBox>
                                                        <HBox prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="1">
                                                            <children>
-                                                               <TextField fx:id="addr3" prefHeight="23.0" prefWidth="200.0">
+                                                               <TextField fx:id="addr3" prefHeight="23.0" prefWidth="350.0">
                                                                    <font>
                                                                        <Font size="13.0" />
                                                                    </font>

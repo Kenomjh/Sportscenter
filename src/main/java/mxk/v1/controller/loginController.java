@@ -93,7 +93,7 @@ public class loginController implements Initializable {
     }
 
     public void joinpg(ActionEvent event) throws Exception {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/member.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/member.fxml"));
         Parent root = loader.load();
 
         stage.close();

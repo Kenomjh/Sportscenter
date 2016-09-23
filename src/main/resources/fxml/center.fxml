@@ -47,7 +47,7 @@
                                </Label>
                                <ImageView fitHeight="400.0" fitWidth="700.0" layoutX="50.0" layoutY="54.0" pickOnBounds="true" preserveRatio="true">
                                    <image>
-                                       <Image url="@../img/parking.png" />
+                                       <Image url="/img/parking.png" />
                                    </image>
                                </ImageView>
                            </children></AnchorPane>
@@ -66,17 +66,17 @@
                                        </Label>
                                        <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="57.0" layoutY="52.0" pickOnBounds="true" preserveRatio="true">
                                            <image>
-                                               <Image url="@../img/swim1.jpg" />
+                                               <Image url="/img/swim1.jpg" />
                                            </image>
                                        </ImageView>
                                        <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="300.0" layoutY="52.0" pickOnBounds="true" preserveRatio="true">
                                            <image>
-                                               <Image url="@../img/swim2.jpg" />
+                                               <Image url="/img/swim2.jpg" />
                                            </image>
                                        </ImageView>
                                        <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="543.0" layoutY="52.0" pickOnBounds="true" preserveRatio="true">
                                            <image>
-                                               <Image url="@../img/swim3.jpg" />
+                                               <Image url="/img/swim3.jpg" />
                                            </image>
                                        </ImageView>
                                        <Label layoutX="56.0" layoutY="276.0" text="※ 수영장 : 50m 5레인(수심 140cm), 25m 4레인(수심 130cm)">
@@ -118,14 +118,14 @@
                                        </Label>
                                        <ImageView fitHeight="400.0" fitWidth="400.0" layoutX="190.0" layoutY="44.0" pickOnBounds="true" preserveRatio="true">
                                            <image>
-                                               <Image url="@../img/soccer1.jpg" />
+                                               <Image url="/img/soccer1.jpg" />
                                            </image>
                                        </ImageView>
                                        <Button layoutX="326.0" layoutY="427.0" mnemonicParsing="false" onAction="#g2tennis" text="테니스장" />
                                        <Button layoutX="417.0" layoutY="427.0" mnemonicParsing="false" onAction="#g2swim" text="수영장" />
                                        <ImageView fitHeight="150.0" fitWidth="650.0" layoutX="75.0" layoutY="319.0" pickOnBounds="true" preserveRatio="true">
                                            <image>
-                                               <Image url="@../img/soccer.png" />
+                                               <Image url="/img/soccer.png" />
                                            </image>
                                        </ImageView>
                                    </children>
@@ -145,7 +145,7 @@
                                </Label>
                                <ImageView fitHeight="400.0" fitWidth="600.0" layoutX="100.0" layoutY="51.0" pickOnBounds="true" preserveRatio="true">
                                    <image>
-                                       <Image url="@../img/navi.png" />
+                                       <Image url="/img/navi.png" />
                                    </image>
                                </ImageView>
                            </children></AnchorPane>

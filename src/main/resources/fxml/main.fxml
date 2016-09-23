@@ -72,7 +72,7 @@
                                     <graphic>
                                         <ImageView fitHeight="30.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                                             <image>
-                                                <Image url="@../img/centerinfo.png" />
+                                                <Image url="/img/centerinfo.png" />
                                             </image>
                                         </ImageView>
                                     </graphic>
@@ -81,7 +81,7 @@
                                     <graphic>
                                         <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                                             <image>
-                                                <Image url="@../img/rental.png" />
+                                                <Image url="/img/rental.png" />
                                             </image>
                                         </ImageView>
                                     </graphic>
@@ -90,7 +90,7 @@
                                     <graphic>
                                         <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                                             <image>
-                                                <Image url="@../img/help.png" />
+                                                <Image url="/img/help.png" />
                                             </image>
                                         </ImageView>
                                     </graphic>
@@ -99,7 +99,7 @@
                                     <graphic>
                                         <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                                             <image>
-                                                <Image url="@../img/printer.png" />
+                                                <Image url="/img/printer.png" />
                                             </image>
                                         </ImageView>
                                     </graphic>
@@ -108,7 +108,7 @@
                                     <graphic>
                                         <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                                             <image>
-                                                <Image url="@../img/member.png" />
+                                                <Image url="/img/member.png" />
                                             </image>
                                         </ImageView>
                                     </graphic>
@@ -117,7 +117,7 @@
                            <graphic>
                                         <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                                             <image>
-                                                <Image url="@../img/kangseup.png" />
+                                                <Image url="/img/kangseup.png" />
                                             </image>
                                         </ImageView>
                            </graphic>
@@ -126,7 +126,7 @@
                                     <graphic>
                                         <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                                             <image>
-                                                <Image url="@../img/1473432457_system-delete-alt-02.png" />
+                                                <Image url="/img/1473432457_system-delete-alt-02.png" />
                                             </image>
                                         </ImageView>
                                     </graphic>
@@ -147,7 +147,7 @@
                 <Label layoutX="250.0" layoutY="13.0" text="Copy Right © 2016." />
                 <ImageView fitHeight="30.0" fitWidth="60.0" layoutX="370.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
                     <image>
-                        <Image url="@../img/tlogo2.png" />
+                        <Image url="/img/tlogo2.png" />
                     </image>
                 </ImageView>
                 <Label layoutX="435.0" layoutY="13.0" text="All Rights Reserved." />
@@ -161,7 +161,7 @@
        <children>
            <ImageView fitHeight="200.0" fitWidth="810.0" layoutY="54.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                   <Image url="@../img/titlemain.png" />
+                   <Image url="/img/titlemain.png" />
                </image>
                <VBox.margin>
                    <Insets top="60.0" />
@@ -169,7 +169,7 @@
            </ImageView>
            <ImageView fitHeight="300.0" fitWidth="810.0" layoutY="125.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                   <Image url="@../img/2015070825089513.jpg" />
+                   <Image url="/img/2015070825089513.jpg" />
                </image>
            </ImageView>
        </children>

@@ -15,9 +15,9 @@ import java.sql.ResultSet;
 public class kangseupDAO {
 
     private static String DRV = "oracle.jdbc.OracleDriver";
-    private static String URL = "jdbc:oracle:thin:@//192.168.93.128:1521/xe";
-    private static String USR = "MIN";
-    private static String PWD = "123";
+    private static String URL = "jdbc:oracle:thin:@//192.168.177.128:1521/xe";
+    private static String USR = "kjh";
+    private static String PWD = "123456";
 
     // 오라클 데이터베이스 접속용 메서드
     public static Connection openConn() throws Exception{
@@ -35,6 +35,30 @@ public class kangseupDAO {
     private static String kLoad = "insert into REGISTER(rno,mno,lesson,rldate) values (sq_rno.nextval,?,?,?)";
     private static String updatekang = "update register set lesson=?, rldate=? where rno=?";
     private static String deletekang = "update register set rting='예약취소' where rno=?";
+    private static String cntT1 = "select count(rno) as cnt from REGISTER join(\n" +
+            " SELECT DISTINCT rno, TRIM(REGEXP_SUBSTR(lesson, '[^-]+', 1, LEVEL)) as a\n" +
+            " FROM register where lesson like '테니스%' and rting !='예약취소'\n" +
+            "        CONNECT BY INSTR(lesson, '-', 1, LEVEL - 1) > 0 ) using(rno) where a !='테니스' and a='어린이반'";
+    private static String cntT2 = "select count(rno) as cnt from REGISTER join(\n" +
+            " SELECT DISTINCT rno, TRIM(REGEXP_SUBSTR(lesson, '[^-]+', 1, LEVEL)) as a\n" +
+            " FROM register where lesson like '테니스%' and rting !='예약취소'\n" +
+            "        CONNECT BY INSTR(lesson, '-', 1, LEVEL - 1) > 0 ) using(rno) where a !='테니스' and a='성인반'";
+    private static String cntT3 = "select count(rno) as cnt from REGISTER join(\n" +
+            " SELECT DISTINCT rno, TRIM(REGEXP_SUBSTR(lesson, '[^-]+', 1, LEVEL)) as a\n" +
+            " FROM register where lesson like '테니스%' and rting !='예약취소'\n" +
+            "        CONNECT BY INSTR(lesson, '-', 1, LEVEL - 1) > 0 ) using(rno) where a !='테니스' and a='직장인반'";
+    private static String cntS1 = "select count(rno) as cnt from REGISTER join(\n" +
+            " SELECT DISTINCT rno, TRIM(REGEXP_SUBSTR(lesson, '[^-]+', 1, LEVEL)) as a\n" +
+            " FROM register where lesson like '수영%' and rting !='예약취소'\n" +
+            "        CONNECT BY INSTR(lesson, '-', 1, LEVEL - 1) > 0 ) using(rno) where a !='수영' and a='어린이반'";
+    private static String cntS2 = "select count(rno) as cnt from REGISTER join(\n" +
+            " SELECT DISTINCT rno, TRIM(REGEXP_SUBSTR(lesson, '[^-]+', 1, LEVEL)) as a\n" +
+            " FROM register where lesson like '수영%' and rting !='예약취소'\n" +
+            "        CONNECT BY INSTR(lesson, '-', 1, LEVEL - 1) > 0 ) using(rno) where a !='수영' and a='성인반'";
+    private static String cntS3 = "select count(rno) as cnt from REGISTER join(\n" +
+            " SELECT DISTINCT rno, TRIM(REGEXP_SUBSTR(lesson, '[^-]+', 1, LEVEL)) as a\n" +
+            " FROM register where lesson like '수영%' and rting !='예약취소'\n" +
+            "        CONNECT BY INSTR(lesson, '-', 1, LEVEL - 1) > 0 ) using(rno) where a !='수영' and a='직장인반'";
 
     //예상비용불러오기
     public  int payCk(String s1){
@@ -117,6 +141,117 @@ public class kangseupDAO {
         }
 
     }
+
+    //인원체크
+    public int kangseupS1Cnt(){
+        Connection conn = null;
+        PreparedStatement pstmt = null;
+        ResultSet rs = null;
+        int result=0;
+        try {
+            conn = openConn();
+            pstmt = conn.prepareStatement(cntS1);
+            rs = pstmt.executeQuery();
+            if(rs.next()){
+                result = rs.getInt("cnt");
+            }
+        }catch (Exception e){e.printStackTrace();
+        }finally {
+            closeConn(conn,pstmt,null);
+        }
+        return result;
+    }
+    public int kangseupS2Cnt(){
+        Connection conn = null;
+        PreparedStatement pstmt = null;
+        ResultSet rs = null;
+        int result=0;
+        try {
+            conn = openConn();
+            pstmt = conn.prepareStatement(cntS2);
+            rs = pstmt.executeQuery();
+            if(rs.next()){
+                result = rs.getInt("cnt");
+            }
+        }catch (Exception e){e.printStackTrace();
+        }finally {
+            closeConn(conn,pstmt,null);
+        }
+        return result;
+    }
+    public int kangseupS3Cnt(){
+        Connection conn = null;
+        PreparedStatement pstmt = null;
+        ResultSet rs = null;
+        int result=0;
+        try {
+            conn = openConn();
+            pstmt = conn.prepareStatement(cntS3);
+            rs = pstmt.executeQuery();
+            if(rs.next()){
+                result = rs.getInt("cnt");
+            }
+        }catch (Exception e){e.printStackTrace();
+        }finally {
+            closeConn(conn,pstmt,null);
+        }
+        return result;
+    }
+    public int kangseupT1Cnt(){
+        Connection conn = null;
+        PreparedStatement pstmt = null;
+        ResultSet rs = null;
+        int result=0;
+        try {
+            conn = openConn();
+            pstmt = conn.prepareStatement(cntT1);
+            rs = pstmt.executeQuery();
+            if(rs.next()){
+                result = rs.getInt("cnt");
+            }
+        }catch (Exception e){e.printStackTrace();
+        }finally {
+            closeConn(conn,pstmt,null);
+        }
+        return result;
+    }
+    public int kangseupT2Cnt(){
+        Connection conn = null;
+        PreparedStatement pstmt = null;
+        ResultSet rs = null;
+        int result=0;
+        try {
+            conn = openConn();
+            pstmt = conn.prepareStatement(cntT2);
+            rs = pstmt.executeQuery();
+            if(rs.next()){
+                result = rs.getInt("cnt");
+            }
+        }catch (Exception e){e.printStackTrace();
+        }finally {
+            closeConn(conn,pstmt,null);
+        }
+        return result;
+    }
+    public int kangseupT3Cnt(){
+        Connection conn = null;
+        PreparedStatement pstmt = null;
+        ResultSet rs = null;
+        int result=0;
+        try {
+            conn = openConn();
+            pstmt = conn.prepareStatement(cntT3);
+            rs = pstmt.executeQuery();
+            if(rs.next()){
+                result = rs.getInt("cnt");
+            }
+        }catch (Exception e){e.printStackTrace();
+        }finally {
+            closeConn(conn,pstmt,null);
+        }
+        return result;
+    }
+
 
 
 

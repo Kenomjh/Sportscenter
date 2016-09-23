@@ -9,7 +9,7 @@
     <children>
         <ImageView fitHeight="270.0" fitWidth="300.0" layoutX="-5.0" pickOnBounds="true" preserveRatio="true">
             <image>
-                <Image url="@../img/IE001032781_STD.jpg" />
+                <Image url="/img/IE001032781_STD.jpg" />
             </image>
         </ImageView>
         <ProgressBar fx:id="pgBar" layoutX="-5.0" layoutY="212.0" prefHeight="18.0" prefWidth="300.0" progress="0.0" />

@@ -1,6 +1,5 @@
 package mxk.v1.controller;
 
-import com.sun.prism.impl.Disposer;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -15,11 +14,9 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import mxk.v1.dao.memberDAO;
+import mxk.v1.model.kReservationModel;
 import mxk.v1.model.memberModel;
 import mxk.v1.model.pReservationModel;
-import mxk.v1.model.rentalModel;
-
-import java.io.IOException;
 import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -192,6 +189,8 @@ public class memberController implements Initializable {
 
     @FXML
     TableView renttv;
+    @FXML
+    TableView tableView2;
 
     private ObservableList<pReservationModel> rentlist = null;
     // TableView에 표시할 데이터들을 저장하기 위해
@@ -228,6 +227,8 @@ public class memberController implements Initializable {
     private String cgen;
     private Button loginBtn;
 
+    public static ObservableList<kReservationModel> krmList = null;
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         memlist = new ArrayList();
@@ -235,7 +236,7 @@ public class memberController implements Initializable {
         checkAggree = 0;
         checkAggree2 = 0;
         checkAggree3 = 0;
-        checkAggree4 =0;
+        checkAggree4 = 0;
 
         gen = "";
         msg = "";
@@ -278,6 +279,8 @@ public class memberController implements Initializable {
         www.setItems(wwwl);
         cwww.setItems(wwwl);
 
+        if (mainController.mlm != null) {  // 쌤 수정!
+
         pdate.setCellValueFactory(new PropertyValueFactory<pReservationModel, String>("pdate"));
         ptime.setCellValueFactory(new PropertyValueFactory<pReservationModel, String>("ptime"));
         ppay.setCellValueFactory(new PropertyValueFactory<pReservationModel, String>("ppay"));
@@ -286,18 +289,43 @@ public class memberController implements Initializable {
 
         rentlist = FXCollections.observableArrayList();
 
-        List<pReservationModel> rds = memberDAO.listRent(mainController.mlm);
-        // board 테이블의 내용을 ArrayList 배열로 넘김
-        for (pReservationModel m : rds) {
-            // 배열에 저장된 게시판 글목록에서 글(행)을 하나씩 읽어와서
-            // observableList 에 저장
-            rentlist.add(m);
-        }
+        System.out.println( "mc init" );
+
+            List<pReservationModel> rds = memberDAO.listRent(mainController.mlm);
+            // board 테이블의 내용을 ArrayList 배열로 넘김
+            for (pReservationModel m : rds) {
+                // 배열에 저장된 게시판 글목록에서 글(행)을 하나씩 읽어와서
+                // observableList 에 저장
+                rentlist.add(m);
+            }
+
+
         renttv.setItems(rentlist);
+
+        lesson.setCellValueFactory(new PropertyValueFactory<kReservationModel,String>("lesson"));
+        ldate.setCellValueFactory(new PropertyValueFactory<kReservationModel,String>("term"));
+        lcost.setCellValueFactory(new PropertyValueFactory<kReservationModel,String>("lpay"));
+        lres.setCellValueFactory(new PropertyValueFactory<kReservationModel,String>("tday"));
+        lcount.setCellValueFactory(new PropertyValueFactory<kReservationModel,String>("ing"));
+        //lcount1;--버튼용
+
+        krmList = FXCollections.observableArrayList();
+
+
+            List<kReservationModel> km = memberDAO.createkrm();
+            for (kReservationModel m : km) {
+                //배열에 저장된 게시판 글목록에서 글(행)을 하나씩 읽어와서 ObservableList 에 저장
+                krmList.add(m);
+            }
+
+
+
+        tableView2.setItems(krmList);
+        }
 
     } // initialize
 
-    public void updateR(ActionEvent actionEvent) throws Exception{
+    public void updateR(ActionEvent actionEvent) throws Exception {
 
         int num = renttv.getSelectionModel().getSelectedIndex();
         String ring = rentlist.get(num).getRing();
@@ -321,7 +349,7 @@ public class memberController implements Initializable {
             rentlist.clear();
 
             List<pReservationModel> km = memberDAO.listRent(mainController.mlm);
-            for(pReservationModel m : km) {
+            for (pReservationModel m : km) {
                 rentlist.add(m);
             }
 
@@ -493,7 +521,7 @@ public class memberController implements Initializable {
 
     // 우편번호 찾기
     public void showaddr(ActionEvent event) throws Exception {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("../../../main/resources/fxml/addr.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/addr.fxml"));
         Parent root = loader.load();
 
         addrController ac = loader.getController();
@@ -509,7 +537,7 @@ public class memberController implements Initializable {
     } // showaddr
 
     public void showaddr2(ActionEvent event) throws Exception {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/addr.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/addr.fxml"));
         Parent root = loader.load();
 
         addrController ac = loader.getController();
@@ -564,7 +592,7 @@ public class memberController implements Initializable {
         loginController lc = loader.getController();
         lc.sendData(logoutbtn, loginBtn, username, nim, stage, mainPane);
 
-        FXMLLoader loader2= new FXMLLoader(getClass().getResource("/view/subMain.fxml"));
+        FXMLLoader loader2 = new FXMLLoader(getClass().getResource("/view/subMain.fxml"));
         Parent root2 = loader2.load();
 
         mainPane.getChildren().clear();
@@ -572,7 +600,7 @@ public class memberController implements Initializable {
 
     } // showlogin
 
-    public void showjoin() throws Exception{
+    public void showjoin() throws Exception {
 
         SingleSelectionModel<Tab> sm = memberTab.getSelectionModel();
         sm.select(0);
@@ -583,51 +611,55 @@ public class memberController implements Initializable {
     } // showjoin
 
     public void showinfo(Event event) {
-        cid.setText(mainController.mlmm.getUserid());
-        cpw.setText(mainController.mlmm.getPasswd());
-        cname.setText(mainController.mlmm.getUsername());
-        // 성별
-        if (mainController.mlmm.getGender().equals("여성")) {
-            cwo.setSelected(true);
-            cgen = "여성";
-        } else {
-            cma.setSelected(true);
-            cgen = "남성";
+
+        System.out.println( "showinfo" );
+        if (mainController.mlmm != null) {  // 쌤 수정!
+            cid.setText(mainController.mlmm.getUserid());
+            cpw.setText(mainController.mlmm.getPasswd());
+            cname.setText(mainController.mlmm.getUsername());
+            // 성별
+            if (mainController.mlmm.getGender().equals("여성")) {
+                cwo.setSelected(true);
+                cgen = "여성";
+            } else {
+                cma.setSelected(true);
+                cgen = "남성";
+            }
+            ctel.setText(mainController.mlmm.getTel());
+            // 생년월일
+            cyear.setValue(mainController.mlmm.getBday().split("-")[0]);
+            cmon.setValue(mainController.mlmm.getBday().split("-")[1]);
+            cday.setValue(mainController.mlmm.getBday().split("-")[2]);
+
+            String caddr[] = mainController.mlmm.getAddr().toString().split("[ ]");
+            caddr1.setText(caddr[0].substring(0, 3));
+            caddr2.setText(caddr[0].substring(4, 7));
+            caddr3.setText(caddr[1] + " " + caddr[2] + " " + caddr[3] + " " + caddr[4] + " " + caddr[5]);
+
+            String etcaddr = "";
+            for (int i = 6; i < caddr.length; ++i) {
+                etcaddr += caddr[i] + " ";
+            }
+            caddr4.setText(etcaddr);
+            String cmaill[] = mainController.mlmm.getEmail().toString().split("[@]");
+            cmail.setText(cmaill[0]);
+
+            // 도메인
+            cwww.setValue(mainController.mlmm.getEmail().split("@")[1]);
         }
-        ctel.setText(mainController.mlmm.getTel());
-        // 생년월일
-        cyear.setValue(mainController.mlmm.getBday().split("-")[0]);
-        cmon.setValue(mainController.mlmm.getBday().split("-")[1]);
-        cday.setValue(mainController.mlmm.getBday().split("-")[2]);
-
-        String caddr[] = mainController.mlmm.getAddr().toString().split("[ ]");
-        caddr1.setText(caddr[0].substring(0, 3));
-        caddr2.setText(caddr[0].substring(4, 7));
-        caddr3.setText(caddr[1] + " " + caddr[2] + " " + caddr[3] + " " + caddr[4] + " " + caddr[5]);
-
-        String etcaddr = "";
-        for (int i = 6; i < caddr.length; ++i) {
-            etcaddr += caddr[i] + " ";
-        }
-        caddr4.setText(etcaddr);
-        String cmaill[] = mainController.mlmm.getEmail().toString().split("[@]");
-        cmail.setText(cmaill[0]);
-
-        // 도메인
-        cwww.setValue(mainController.mlmm.getEmail().split("@")[1]);
     } // showinfo
 
     // 수정하기
     public void update(ActionEvent event) {
         String cbday = cyear.getSelectionModel().getSelectedItem()
-                +"-"+cmon.getSelectionModel().getSelectedItem()+"-"+cday.getSelectionModel().getSelectedItem();
+                + "-" + cmon.getSelectionModel().getSelectedItem() + "-" + cday.getSelectionModel().getSelectedItem();
 
         String cemailA = cmail.getText() + "@" + cwww.getSelectionModel().getSelectedItem();
 
         if (cpw.getText().equals("")) {
             showWarn("비밀번호를 입력하세요!!");
             cpw.requestFocus();
-        } else if (!cpw.getText().equals(cokpw.getText())){
+        } else if (!cpw.getText().equals(cokpw.getText())) {
             showWarn("비밀번호가 동일하지 않습니다!!");
         } /*else if (cgen.equals("")) {
             showWarn("성별을 선택하세요!!");
@@ -670,8 +702,8 @@ public class memberController implements Initializable {
     } // showOk
 
     // 탈퇴
-    public void out(ActionEvent event) throws Exception{
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/out.fxml"));
+    public void out(ActionEvent event) throws Exception {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/out.fxml"));
         Parent root = loader.load();
 
         Stage stage = new Stage();
@@ -696,9 +728,44 @@ public class memberController implements Initializable {
 
     public void updateK(ActionEvent event) {
 
+        FXMLLoader f = new FXMLLoader(getClass().getResource("/fxml/editKangseup.fxml"));
+        Parent root = null;
+        try {
+            root = f.load();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        Stage stage = new Stage();
+        stage.setScene(new Scene(root));
+
+        int num = tableView2.getSelectionModel().getSelectedIndex();
+
+        String caddr[] = memberController.krmList.get(num).getLesson().toString().split("-");
+
+        String rno = krmList.get(num).getRno();
+        String y1 = caddr[0];
+        String y2 = caddr[1];
+        String y3 = memberController.krmList.get(num).getTerm();
+        String y4 = memberController.krmList.get(num).getLpay();
+        System.out.println(y1);
+        editKangseupController ekc = f.getController();
+        ekc.startEditk(rno, y1, y2, y3, y4);
+
+        stage.showAndWait();
+
+
+        krmList.clear();
+
+        List<kReservationModel> km = memberDAO.createkrm();
+        for (kReservationModel m : km) {
+            krmList.add(m);
+        }
+
+        tableView2.setItems(krmList);
     }
 
-    public void sendData(Button logoutbtn, Button loginBtn, Label username, Label nim,Stage stage, Pane mainPane) {
+    public void sendData(Button logoutbtn, Button loginBtn, Label username, Label nim, Stage stage, Pane mainPane) {
         this.logoutbtn = logoutbtn;
         this.loginBtn = loginBtn;
         this.username = username;

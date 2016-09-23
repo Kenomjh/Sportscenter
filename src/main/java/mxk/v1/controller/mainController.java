@@ -307,7 +307,7 @@ public class mainController implements Initializable {
     }
 
     public void relogin(ActionEvent event) throws Exception {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/login.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/login.fxml"));
         Parent root = loader.load();
 
         Stage stage = new Stage();
@@ -318,5 +318,9 @@ public class mainController implements Initializable {
         loginController lc = loader.getController();
         lc.sendData(logoutbtn, loginBtn, username, nim, stage, mainPane);
     } // relogin
+
+    public Pane cllpane(){
+        return mainPane;
+    }
 
 }

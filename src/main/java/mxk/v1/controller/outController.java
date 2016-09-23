@@ -45,7 +45,7 @@ public class outController implements Initializable{
             stage = (Stage)outPane.getScene().getWindow();
             stage.close();
 
-            FXMLLoader loader2= new FXMLLoader(getClass().getResource("../view/subMain.fxml"));
+            FXMLLoader loader2= new FXMLLoader(getClass().getResource("/fxml/subMain.fxml"));
             Parent root2 = loader2.load();
 
             mainPane.getChildren().clear();

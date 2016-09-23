@@ -8,6 +8,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.image.Image;
+import javafx.scene.layout.Pane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
@@ -94,8 +95,8 @@ public class splashController implements Initializable{
         a.setOnCloseRequest(event -> mc.closeApp2(event));
 
         a.show();
-
+        Pane newP = mc.cllpane();
         loginController lc = f2.getController();
-        lc.sendData(mc.getLogoutbtn(),null,mc.getUsername(),mc.getNim(),a,null);
+        lc.sendData(mc.getLogoutbtn(),null,mc.getUsername(),mc.getNim(),a,newP);
     }
 }//SplashController
