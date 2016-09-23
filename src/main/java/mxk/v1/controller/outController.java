@@ -5,12 +5,16 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import mxk.v1.dao.memberDAO;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -33,6 +37,7 @@ public class outController implements Initializable{
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+
         outid.setText(mainController.mlmm.getUserid());
     } // initialize **
 
@@ -48,13 +53,42 @@ public class outController implements Initializable{
             FXMLLoader loader2= new FXMLLoader(getClass().getResource("/fxml/subMain.fxml"));
             Parent root2 = loader2.load();
 
+            System.out.println( "oc :" + mainPane );
+
             mainPane.getChildren().clear();
             mainPane.getChildren().add(root2);
 
             username.setVisible(false);
             nim.setVisible(false);
             logoutbtn.setVisible(false);
-            loginBtn.setVisible(true);
+            loginBtn.setVisible(false);
+
+            //login stage
+            FXMLLoader f2 = new FXMLLoader(getClass().getResource("/fxml/login.fxml"));
+            Parent root3 = null;
+            try {
+                root3 = f2.load();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            Stage a = new Stage();
+            a.setScene(new Scene(root3));
+            a.setTitle("로그인");
+            a.initModality(Modality.WINDOW_MODAL);
+            a.initStyle(StageStyle.UTILITY);
+            a.initOwner(stage);
+
+            mainController mc = new mainController();
+
+            a.setOnCloseRequest(windowEventevent -> mc.closeApp2(event));
+
+            a.show();
+            Pane newP = mc.cllpane();
+            loginController lc = f2.getController();
+            lc.sendData(mc.getLogoutbtn(),null,mc.getUsername(),mc.getNim(),a,newP);
+
+
+
         } // if-else
     } // outdb **
 

@@ -14,7 +14,7 @@
                    <content>
                        <StackPane prefHeight="487.0" prefWidth="699.0" BorderPane.alignment="CENTER">
                            <children>
-                               <Pane fx:id="join1" prefHeight="200.0" prefWidth="200.0" visible="false">
+                               <Pane fx:id="join1" prefHeight="200.0" prefWidth="200.0">
                                    <children>
                                        <Label layoutX="50.0" layoutY="14.0" text="회원가입">
                                            <font>
@@ -79,7 +79,7 @@
                                    </children>
                                </Pane>
 
-                               <Pane fx:id="join2" prefHeight="477.0" prefWidth="800.0" BorderPane.alignment="CENTER">
+                               <Pane fx:id="join2" prefHeight="477.0" prefWidth="800.0" visible="false" BorderPane.alignment="CENTER">
                                    <children>
                                        <Button fx:id="prebtn" layoutX="653.0" layoutY="431.0" mnemonicParsing="false" onAction="#backfirst" text="이전으로" />
                                        <Button fx:id="next2btn" layoutX="730.0" layoutY="431.0" mnemonicParsing="false" onAction="#showthird" text="다음으로" />
@@ -331,7 +331,7 @@
                                                        </HBox>
                                                        <HBox prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="1">
                                                            <children>
-                                                               <TextField fx:id="addr3" prefHeight="23.0" prefWidth="350.0">
+                                                               <TextField fx:id="addr3" prefHeight="23.0" prefWidth="300.0">
                                                                    <font>
                                                                        <Font size="13.0" />
                                                                    </font>
@@ -355,6 +355,11 @@
                                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                                                    </rowConstraints>
                                                </GridPane>
+                                    <Button mnemonicParsing="false" onAction="#ckidid" text="중복확인" GridPane.columnIndex="1">
+                                       <GridPane.margin>
+                                          <Insets left="260.0" />
+                                       </GridPane.margin>
+                                    </Button>
                                            </children>
                                            <columnConstraints>
                                                <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="220.0" minWidth="10.0" prefWidth="38.0" />
@@ -608,7 +613,7 @@
                                                        </HBox>
                                                        <HBox prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="1">
                                                            <children>
-                                                               <TextField fx:id="raddr3" editable="false" prefHeight="23.0" prefWidth="200.0">
+                                                               <TextField fx:id="raddr3" editable="false" prefHeight="23.0" prefWidth="300.0">
                                                                    <font>
                                                                        <Font size="13.0" />
                                                                    </font>
@@ -964,7 +969,7 @@
                                                </HBox>
                                                <HBox prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="1">
                                                    <children>
-                                                       <TextField fx:id="caddr3" prefHeight="23.0" prefWidth="200.0">
+                                                       <TextField fx:id="caddr3" prefHeight="23.0" prefWidth="300.0">
                                                            <font>
                                                                <Font size="15.0" />
                                                            </font>

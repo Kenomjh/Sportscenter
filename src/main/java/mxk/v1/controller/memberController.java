@@ -325,6 +325,24 @@ public class memberController implements Initializable {
 
     } // initialize
 
+    public void ckidid(ActionEvent actionEvent){
+        memberDAO md = new memberDAO();
+        int cno = md.idchkdb(uid.getText());
+        if(cno==0){
+            Alert info = new Alert(Alert.AlertType.INFORMATION);
+            info.setTitle("확인창");
+            info.setHeaderText(null);
+            info.setContentText("사용가능한 아이디 입니다.");
+            info.showAndWait();
+        }else{
+            Alert info = new Alert(Alert.AlertType.WARNING);
+            info.setTitle("확인창");
+            info.setHeaderText(null);
+            info.setContentText("사용 불가능한 아이디 입니다.");
+            info.showAndWait();
+        }
+    }
+
     public void updateR(ActionEvent actionEvent) throws Exception {
 
         int num = renttv.getSelectionModel().getSelectedIndex();
@@ -780,7 +798,8 @@ public class memberController implements Initializable {
         stage.show();
 
         outController oc = loader.getController();
-        oc.sendData(logoutbtn, loginBtn, username, nim, stage, mainPane);
+         oc.sendData(logoutbtn, loginBtn, username, nim, stage, mainPane);
+        System.out.println( "mc :" + mainPane );
 
     } // out
 
@@ -803,4 +822,8 @@ public class memberController implements Initializable {
         this.mainPane = mainPane;
     } // sendData
 
+
+    public Pane callPane(){
+        return mainPane;
+    }
 } // class

@@ -39,6 +39,8 @@ public class memberDAO {
 
     private static String ckrm = "select * from register join class using (lesson) where mno = ? order by rno desc";
 
+    private  static String ckid = "select count(userid) as cno from member where userid=?";
+
     private static ObservableList ziplist;
 
     public static Connection openConn () {
@@ -145,7 +147,8 @@ public class memberDAO {
 
         try {
             conn = openConn();
-            pstmt = conn.prepareStatement(deltemem);
+
+            pstmt = conn.prepareStatement(deltepre);
             pstmt.setString(1, uid);
             pstmt.executeUpdate();
             pstmt.close();
@@ -157,11 +160,13 @@ public class memberDAO {
             pstmt.close();
             pstmt = null;
 
-            pstmt = conn.prepareStatement(deltepre);
+            pstmt = conn.prepareStatement(deltemem);
             pstmt.setString(1, uid);
             pstmt.executeUpdate();
             pstmt.close();
             pstmt = null;
+
+
 
         } catch (Exception ex) {
             ex.printStackTrace();
@@ -249,4 +254,25 @@ public class memberDAO {
         return result;
     }
 
+    public int idchkdb(String uid) {
+        Connection conn = null;
+        PreparedStatement pstmt = null;
+        ResultSet rs= null;
+        int result = 0;
+        try {
+            conn = openConn();
+            pstmt = conn.prepareStatement(ckid);
+            pstmt.setString(1, uid);
+            rs = pstmt.executeQuery();
+            if(rs.next()){
+                result = rs.getInt("cno");
+            }
+
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        } finally {
+            closeConn(conn, pstmt, rs);
+        }// try-catch
+        return result;
+    }
 } // class

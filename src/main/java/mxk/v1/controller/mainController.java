@@ -174,6 +174,8 @@ public class mainController implements Initializable {
 
         memberController mCtr = loader.getController();
         mCtr.m1();
+
+        mCtr.sendData(logoutbtn, loginBtn, username, nim, null, mainPane);
     }
 
     public void g2m2(ActionEvent ae) throws Exception {
