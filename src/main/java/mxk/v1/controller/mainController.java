@@ -14,6 +14,7 @@ import javafx.scene.layout.Pane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import mxk.v1.model.loginMemberModel;
 import mxk.v1.model.loginViewModel;
 
 import java.io.IOException;
@@ -42,6 +43,7 @@ public class mainController implements Initializable {
     private Button logoutbtn;
 
     public static loginViewModel mlm = null;
+    public static loginMemberModel mlmm = null;
 
 
     @Override
@@ -300,6 +302,6 @@ public class mainController implements Initializable {
         a.show();
 
         loginController lc = f2.getController();
-        lc.sendData(logoutbtn,username,nim,a);
+        lc.sendData(logoutbtn,null,username,nim,a,null);
     }
 }

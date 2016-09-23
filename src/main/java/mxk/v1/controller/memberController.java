@@ -200,6 +200,7 @@ public class memberController implements Initializable {
     private int checkAggree;
     private int checkAggree2;
     private int checkAggree3;
+    private int checkAggree4;
 
     private String gen;
     private String msg;
@@ -217,6 +218,16 @@ public class memberController implements Initializable {
     // 데이터 임시 저장소
     private List<memberModel> memlist;
 
+    private Stage stage;
+
+    private Label username;
+    private Label nim;
+    private Button logoutbtn;
+    private Pane mainPane;
+
+    private String cgen;
+    private Button loginBtn;
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         memlist = new ArrayList();
@@ -224,9 +235,11 @@ public class memberController implements Initializable {
         checkAggree = 0;
         checkAggree2 = 0;
         checkAggree3 = 0;
+        checkAggree4 =0;
 
         gen = "";
         msg = "";
+        cgen = "";
 
         // 연도
         for (int i = 0; i <= 56; i++) {
@@ -234,6 +247,7 @@ public class memberController implements Initializable {
         }
         ObservableList yearl = FXCollections.observableArrayList(years);
         year.setItems(yearl);
+        cyear.setItems(yearl);
 
         // 월
         for (int i = 0; i < 12; i++) {
@@ -242,6 +256,7 @@ public class memberController implements Initializable {
 
         ObservableList monthl = FXCollections.observableArrayList(mons);
         mon.setItems(monthl);
+        cmon.setItems(monthl);
 
         // 일
         for (int i = 0; i < 31; i++) {
@@ -250,6 +265,7 @@ public class memberController implements Initializable {
 
         ObservableList dayl = FXCollections.observableArrayList(days);
         day.setItems(dayl);
+        cday.setItems(dayl);
 
         // 이메일
         wwws[0] = "naver.com";
@@ -260,6 +276,7 @@ public class memberController implements Initializable {
 
         ObservableList wwwl = FXCollections.observableArrayList(wwws);
         www.setItems(wwwl);
+        cwww.setItems(wwwl);
 
         pdate.setCellValueFactory(new PropertyValueFactory<pReservationModel, String>("pdate"));
         ptime.setCellValueFactory(new PropertyValueFactory<pReservationModel, String>("ptime"));
@@ -344,9 +361,20 @@ public class memberController implements Initializable {
         else gen = "";
     } // chwo
 
+    // 성별 수정
+    public void chwo2(ActionEvent event) {
+        if (checkAggree4 == 0) gen = "여성";
+        else cgen = "";
+    } // chwo
+
     public void chma(ActionEvent event) {
         if (checkAggree2 == 0) gen = "남성";
         else gen = "";
+    } // chma
+
+    public void chma2(ActionEvent event) {
+        if (checkAggree4 == 0) gen = "남성";
+        else cgen = "";
     } // chma
 
     // 다음으로 - 두번째 화면으로
@@ -480,6 +508,20 @@ public class memberController implements Initializable {
 
     } // showaddr
 
+    public void showaddr2(ActionEvent event) throws Exception {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/addr.fxml"));
+        Parent root = loader.load();
+
+        addrController ac = loader.getController();
+
+
+        Stage stage = new Stage();
+        stage.setScene(new Scene(root));
+        stage.setTitle("주소");
+        ac.sendData(caddr1, caddr2, caddr3, stage);
+        stage.show();
+    } // showaddr2
+
     // 이전으로 - 두번째 화면으로 이동
     public void backsecond(ActionEvent event) {
         join1.setVisible(false);
@@ -511,23 +553,135 @@ public class memberController implements Initializable {
 
     // 로그인 창 띄우기
     public void showlogin(ActionEvent event) throws Exception {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("../fxml/login.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/login.fxml"));
         Parent root = loader.load();
 
         Stage stage = new Stage();
         stage.setScene(new Scene(root));
         stage.setTitle("로그인");
         stage.show();
+
+        loginController lc = loader.getController();
+        lc.sendData(logoutbtn, loginBtn, username, nim, stage, mainPane);
+
+        FXMLLoader loader2= new FXMLLoader(getClass().getResource("/view/subMain.fxml"));
+        Parent root2 = loader2.load();
+
+        mainPane.getChildren().clear();
+        mainPane.getChildren().add(root2);
+
     } // showlogin
 
-    public void showinfo(Event event) {
+    public void showjoin() throws Exception{
 
+        SingleSelectionModel<Tab> sm = memberTab.getSelectionModel();
+        sm.select(0);
+
+        memberTab.getTabs().get(0).setDisable(false);
+        memberTab.getTabs().get(1).setDisable(true);
+        memberTab.getTabs().get(2).setDisable(true);
+    } // showjoin
+
+    public void showinfo(Event event) {
+        cid.setText(mainController.mlmm.getUserid());
+        cpw.setText(mainController.mlmm.getPasswd());
+        cname.setText(mainController.mlmm.getUsername());
+        // 성별
+        if (mainController.mlmm.getGender().equals("여성")) {
+            cwo.setSelected(true);
+            cgen = "여성";
+        } else {
+            cma.setSelected(true);
+            cgen = "남성";
+        }
+        ctel.setText(mainController.mlmm.getTel());
+        // 생년월일
+        cyear.setValue(mainController.mlmm.getBday().split("-")[0]);
+        cmon.setValue(mainController.mlmm.getBday().split("-")[1]);
+        cday.setValue(mainController.mlmm.getBday().split("-")[2]);
+
+        String caddr[] = mainController.mlmm.getAddr().toString().split("[ ]");
+        caddr1.setText(caddr[0].substring(0, 3));
+        caddr2.setText(caddr[0].substring(4, 7));
+        caddr3.setText(caddr[1] + " " + caddr[2] + " " + caddr[3] + " " + caddr[4] + " " + caddr[5]);
+
+        String etcaddr = "";
+        for (int i = 6; i < caddr.length; ++i) {
+            etcaddr += caddr[i] + " ";
+        }
+        caddr4.setText(etcaddr);
+        String cmaill[] = mainController.mlmm.getEmail().toString().split("[@]");
+        cmail.setText(cmaill[0]);
+
+        // 도메인
+        cwww.setValue(mainController.mlmm.getEmail().split("@")[1]);
     } // showinfo
 
+    // 수정하기
     public void update(ActionEvent event) {
+        String cbday = cyear.getSelectionModel().getSelectedItem()
+                +"-"+cmon.getSelectionModel().getSelectedItem()+"-"+cday.getSelectionModel().getSelectedItem();
+
+        String cemailA = cmail.getText() + "@" + cwww.getSelectionModel().getSelectedItem();
+
+        if (cpw.getText().equals("")) {
+            showWarn("비밀번호를 입력하세요!!");
+            cpw.requestFocus();
+        } else if (!cpw.getText().equals(cokpw.getText())){
+            showWarn("비밀번호가 동일하지 않습니다!!");
+        } /*else if (cgen.equals("")) {
+            showWarn("성별을 선택하세요!!");
+        }*/ else if (ctel.getText().equals("")) {
+            showWarn("전화번호를 입력하세요!!");
+            ctel.requestFocus();
+        } else if (cbday.equals("")) {
+            showWarn("생년월일을 선택하세요!!");
+        } else if (caddr1.getText().equals("")) {
+            showWarn("주소를 입력하세요!!");
+            caddr1.requestFocus();
+        } else if (caddr2.getText().equals("")) {
+            showWarn("주소를 입력하세요!!");
+            caddr2.requestFocus();
+        } else if (caddr3.getText().equals("")) {
+            showWarn("주소를 입력하세요!!");
+            caddr3.requestFocus();
+        } else if (caddr4.getText().equals("")) {
+            showWarn("주소를 입력하세요!!");
+            caddr4.requestFocus();
+        } else if (cemailA.equals("")) {
+            showWarn("이메일을 입력하세요!!");
+            cmail.requestFocus();
+        } else {
+            memberModel md = new memberModel("", cid.getText(), cpw.getText(), cname.getText(), cbday, cgen,
+                    caddr1.getText(), caddr2.getText(), caddr3.getText(), caddr4.getText(), ctel.getText(), cemailA, msg, "");
+
+            memberDAO.updatedb(md);
+
+            showOk("수정완료!!");
+        } // if-else
     } // update
 
-    public void out(ActionEvent event) {
+    private void showOk(String s) {
+        Alert warn = new Alert(Alert.AlertType.INFORMATION);
+        warn.setTitle("성공!!!");
+        warn.setHeaderText(null);
+        warn.setContentText(s);
+        warn.showAndWait();
+    } // showOk
+
+    // 탈퇴
+    public void out(ActionEvent event) throws Exception{
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/out.fxml"));
+        Parent root = loader.load();
+
+        Stage stage = new Stage();
+        stage.setScene(new Scene(root));
+        stage.setTitle("탈퇴!!");
+        stage.show();
+
+        outController oc = loader.getController();
+        oc.sendData(logoutbtn, loginBtn, username, nim, stage, mainPane);
+
     } // out
 
     public void m1() throws Exception {
@@ -543,4 +697,14 @@ public class memberController implements Initializable {
     public void updateK(ActionEvent event) {
 
     }
+
+    public void sendData(Button logoutbtn, Button loginBtn, Label username, Label nim,Stage stage, Pane mainPane) {
+        this.logoutbtn = logoutbtn;
+        this.loginBtn = loginBtn;
+        this.username = username;
+        this.nim = nim;
+        this.stage = stage;
+        this.mainPane = mainPane;
+    } // sendData
+
 } // class

@@ -24,10 +24,16 @@ public class memberDAO {
 
     private static String zipsql = "select DISTINCT zipcode, do, gun, myeon, gil, ri from zipcode where myeon = ?";
 
-    private static String select = "select userid, passwd,username,bday,gender,addr,tel,email from member where ";
+    private static String updatesql = "update member set passwd = ?, tel = ?, bday = ?, addr = ?, email = ? where userid = ?";
 
     private static String listrent = " select * from PRENT join soccer using (ptime) where mno = ? " +
             " ORDER BY PRNO DESC ";
+
+    private static String deltemem = "delete from member where userid = ?";
+
+    private static String deltereg = "delete from register where mno = (select mno from member where userid = ?)";
+
+    private static String deltepre = "delete from prent where mno = (select mno from member where userid = ?)";
 
     private static ObservableList ziplist;
 
@@ -107,6 +113,58 @@ public class memberDAO {
         } // try-catch
     } // savedb
 
+    public static void updatedb(memberModel md) {
+        Connection conn = null;
+        PreparedStatement pstmt = null;
+
+        try {
+            conn = openConn();
+            pstmt = conn.prepareStatement(updatesql);
+            pstmt.setString(1, md.getPw());
+            pstmt.setString(2, md.getTel());
+            pstmt.setString(3, md.getBday());
+            pstmt.setString(4, md.getAddr1()+"-"+md.getAddr2()+" "+md.getAddr3()+" "+md.getAddr4());
+            pstmt.setString(5, md.getEmail());
+            pstmt.setString(6, md.getId());
+
+            pstmt.executeUpdate();
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        } finally {
+            closeConn(conn, pstmt, null);
+        }
+    } // updatedb
+
+    public static void deletedb(String uid) {
+        Connection conn = null;
+        PreparedStatement pstmt = null;
+
+        try {
+            conn = openConn();
+            pstmt = conn.prepareStatement(deltemem);
+            pstmt.setString(1, uid);
+            pstmt.executeUpdate();
+            pstmt.close();
+            pstmt = null;
+
+            pstmt = conn.prepareStatement(deltereg);
+            pstmt.setString(1, uid);
+            pstmt.executeUpdate();
+            pstmt.close();
+            pstmt = null;
+
+            pstmt = conn.prepareStatement(deltepre);
+            pstmt.setString(1, uid);
+            pstmt.executeUpdate();
+            pstmt.close();
+            pstmt = null;
+
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        } finally {
+            closeConn(conn, pstmt, null);
+        }
+    }
 
     public static List<pReservationModel> listRent(loginViewModel mlm) {
         // 데이터베이스 관련 변수

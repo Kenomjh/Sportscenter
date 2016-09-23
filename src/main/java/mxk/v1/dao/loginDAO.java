@@ -1,6 +1,7 @@
 package mxk.v1.dao;
 
 import javafx.collections.ObservableList;
+import mxk.v1.model.loginMemberModel;
 import mxk.v1.model.loginViewModel;
 
 import java.sql.Connection;
@@ -27,8 +28,6 @@ public class loginDAO {
     private static String cview = "select * from mem where userid=?";
 
     private static String cLmm = "select * from member where userid=?";
-    private static String cLpm = "select*from prent where mno = (select mno from member where userid=?)";
-    private static String cLrm = "select*from register where mno = (select mno from member where userid=?)";
 
     public static Connection openConn() throws Exception{
         Class.forName(DRV);
@@ -118,4 +117,43 @@ public class loginDAO {
         return result;
     }
 
+    //로그인회원정보 생성
+    public static loginMemberModel createlmm(String uid) {
+        Connection conn = null;
+        PreparedStatement pstmt = null;
+        ResultSet rs = null;
+        loginMemberModel result = null;
+
+        try {
+            conn = openConn();
+            pstmt = conn.prepareStatement(cLmm);
+            pstmt.setString(1,uid);
+            rs = pstmt.executeQuery();
+
+            if(rs.next()){
+                loginMemberModel lm = new loginMemberModel(
+                        rs.getString("mno"),
+                        rs.getString("userid"),
+                        rs.getString("passwd"),
+                        rs.getString("username"),
+                        rs.getString("bday"),
+                        rs.getString("gender"),
+                        rs.getString("addr"),
+                        rs.getString("tel"),
+                        rs.getString("email"),
+                        rs.getString("ldate"));
+
+                result=lm;
+            }
+
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }finally {
+            closeConn(conn, pstmt,rs);
+        }
+
+        return result;
     }
+
+}

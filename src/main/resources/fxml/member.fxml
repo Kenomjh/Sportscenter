@@ -11,7 +11,7 @@
    <children>
        <TabPane fx:id="memberTab" prefHeight="517.0" prefWidth="800.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
            <tabs>
-               <Tab fx:id="joinTap" disable="true" onSelectionChanged="#showfirst" text="회원가입">
+               <Tab disable="true" onSelectionChanged="#showfirst" text="회원가입">
                    <content>
                        <StackPane prefHeight="487.0" prefWidth="699.0" BorderPane.alignment="CENTER">
                            <children>
@@ -287,23 +287,23 @@
                                                                <Insets right="10.0" />
                                                            </HBox.margin>
                                                        </Label>
-                                          <ComboBox fx:id="www" prefHeight="23.0" prefWidth="132.0" promptText="도메인선택" />
+                                                       <ComboBox fx:id="www" prefHeight="23.0" prefWidth="132.0" promptText="도메인선택" />
                                                    </children>
                                                </HBox>
                                                <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="6">
-                                       <children>
-                                          <ComboBox fx:id="year" prefWidth="100.0" promptText="연도선택">
-                                             <HBox.margin>
-                                                <Insets right="10.0" />
-                                             </HBox.margin>
-                                          </ComboBox>
-                                          <ComboBox fx:id="mon" prefWidth="100.0" promptText="월선택">
-                                             <HBox.margin>
-                                                <Insets right="10.0" />
-                                             </HBox.margin>
-                                          </ComboBox>
-                                          <ComboBox fx:id="day" prefWidth="100.0" promptText="일선택" />
-                                       </children>
+                                                   <children>
+                                                       <ComboBox fx:id="year" prefWidth="100.0" promptText="연도선택">
+                                                           <HBox.margin>
+                                                               <Insets right="10.0" />
+                                                           </HBox.margin>
+                                                       </ComboBox>
+                                                       <ComboBox fx:id="mon" prefWidth="100.0" promptText="월선택">
+                                                           <HBox.margin>
+                                                               <Insets right="10.0" />
+                                                           </HBox.margin>
+                                                       </ComboBox>
+                                                       <ComboBox fx:id="day" prefWidth="100.0" promptText="일선택" />
+                                                   </children>
                                                </HBox>
                                                <GridPane vgap="10.0" GridPane.columnIndex="1" GridPane.rowIndex="7">
                                                    <children>
@@ -870,12 +870,12 @@
                                        </PasswordField>
                                        <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
                                            <children>
-                                               <CheckBox fx:id="cwo" mnemonicParsing="false" text="여자">
+                                               <CheckBox fx:id="cwo" mnemonicParsing="false" onAction="#chwo2" text="여자">
                                                    <font>
                                                        <Font size="15.0" />
                                                    </font>
                                                </CheckBox>
-                                               <CheckBox fx:id="cma" mnemonicParsing="false" text="남자">
+                                               <CheckBox fx:id="cma" mnemonicParsing="false" onAction="#chma2" text="남자">
                                                    <font>
                                                        <Font size="15.0" />
                                                    </font>
@@ -960,7 +960,7 @@
                                                                <Insets right="20.0" />
                                                            </HBox.margin>
                                                        </TextField>
-                                                       <Button fx:id="caddrbtn" mnemonicParsing="false" text="우편번호찾기" />
+                                                       <Button fx:id="caddrbtn" mnemonicParsing="false" onAction="#showaddr2" text="우편번호찾기" />
                                                    </children>
                                                </HBox>
                                                <HBox prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="1">

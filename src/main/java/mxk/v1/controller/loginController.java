@@ -11,6 +11,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
+import javafx.scene.layout.Pane;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import mxk.v1.dao.loginDAO;
@@ -36,6 +37,8 @@ public class loginController implements Initializable {
     private Label username;
     private Label nim;
     private Button logoutbtn;
+    private Button loginBtn;
+    private Pane mainPane;
 
     public void loginpg(ActionEvent actionEvent) {
 
@@ -89,15 +92,32 @@ public class loginController implements Initializable {
 
     }
 
+    public void joinpg(ActionEvent event) throws Exception {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/member.fxml"));
+        Parent root = loader.load();
+
+        stage.close();
+
+        mainPane.getChildren().clear();
+        mainPane.getChildren().add(root);
+
+        memberController mc = loader.getController();
+        mc.sendData(logoutbtn, loginBtn, username, nim, stage, mainPane);
+
+        mc.showjoin();
+    } // joinpg
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
        logintxt.setFont(Font.loadFont( getClass().getResource("/font/rose.ttf").toExternalForm(), 15));
     }
 
-    public void sendData(Button logoutbtn, Label username, Label nim,Stage stage) {
+    public void sendData(Button logoutbtn, Button loginBtn, Label username, Label nim,Stage stage, Pane mainPane) {
         this.logoutbtn = logoutbtn;
+        this.loginBtn = loginBtn;
         this.username = username;
         this.nim = nim;
         this.stage = stage;
-    }
+        this.mainPane = mainPane;
+    } // sendData
 }
