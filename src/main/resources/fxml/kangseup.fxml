@@ -104,8 +104,8 @@
                                         <Label layoutX="140.0" layoutY="214.0" text="기간선택" />
                                         <TextField fx:id="userId" editable="false" layoutX="212.0" layoutY="46.0" prefHeight="23.0" prefWidth="150.0" />
                                         <TextField fx:id="userName" editable="false" layoutX="212.0" layoutY="79.0" prefHeight="23.0" prefWidth="150.0" />
-                                        <TextField fx:id="addr" editable="false" layoutX="212.0" layoutY="112.0" prefHeight="23.0" prefWidth="150.0" />
-                                        <TextField fx:id="tel" editable="false" layoutX="212.0" layoutY="144.0" prefHeight="23.0" prefWidth="421.0" />
+                                        <TextField fx:id="tel" editable="false" layoutX="212.0" layoutY="112.0" prefHeight="23.0" prefWidth="150.0" />
+                                        <TextField fx:id="addr" editable="false" layoutX="212.0" layoutY="144.0" prefHeight="23.0" prefWidth="421.0" />
                                         <ComboBox fx:id="selt1" layoutX="212.0" layoutY="177.0" onAction="#kStep1" prefWidth="150.0" promptText="강습종목선택" />
                                         <ComboBox fx:id="selt2" disable="true" layoutX="376.0" layoutY="177.0" onAction="#kStep2" prefWidth="150.0" promptText="프로그램선택" />
                                         <ComboBox fx:id="selt3" disable="true" layoutX="212.0" layoutY="210.0" onAction="#kStep3" prefWidth="150.0" promptText="강습기간선택" />
@@ -129,8 +129,8 @@
                                         <Label layoutX="140.0" layoutY="214.0" text="기간선택" />
                                         <TextField fx:id="userId2" editable="false" layoutX="212.0" layoutY="46.0" prefHeight="23.0" prefWidth="150.0" />
                                         <TextField fx:id="userName2" editable="false" layoutX="212.0" layoutY="79.0" prefHeight="23.0" prefWidth="150.0" />
-                                        <TextField fx:id="addr2" editable="false" layoutX="212.0" layoutY="112.0" prefHeight="23.0" prefWidth="150.0" />
-                                        <TextField fx:id="tel2" editable="false" layoutX="212.0" layoutY="144.0" prefHeight="23.0" prefWidth="421.0" />
+                                        <TextField fx:id="tel2" editable="false" layoutX="212.0" layoutY="112.0" prefHeight="23.0" prefWidth="150.0" />
+                                        <TextField fx:id="addr2" editable="false" layoutX="212.0" layoutY="144.0" prefHeight="23.0" prefWidth="421.0" />
                                         <TextField fx:id="payText1" editable="false" layoutX="258.0" layoutY="315.0" prefWidth="150.0" />
                                         <Button layoutX="326.0" layoutY="422.0" mnemonicParsing="false" onAction="#g2appliction" text="예약정보페이지로 이동" />
                                         <Label layoutX="140.0" layoutY="253.0" text="강습신청이 완료되었습니다.">

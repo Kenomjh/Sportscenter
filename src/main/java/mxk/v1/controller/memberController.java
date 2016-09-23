@@ -328,38 +328,106 @@ public class memberController implements Initializable {
     public void updateR(ActionEvent actionEvent) throws Exception {
 
         int num = renttv.getSelectionModel().getSelectedIndex();
-        String ring = rentlist.get(num).getRing();
-        if (!ring.equals("예약취소")) {
 
-            FXMLLoader f = new FXMLLoader(getClass().getResource("/fxml/editRent.fxml"));
-            Parent root = f.load();
+        if(num != -1) {
+            String ring = rentlist.get(num).getRing();
+            if (!ring.equals("예약취소")) {
 
-            Stage stage = new Stage();
-            stage.setScene(new Scene(root));
+                FXMLLoader f = new FXMLLoader(getClass().getResource("/fxml/editRent.fxml"));
+                Parent root = f.load();
 
-            String prno = rentlist.get(num).getPrno();
-            String y1 = rentlist.get(num).getPtime();
-            String y2 = rentlist.get(num).getPdate();
-            String y3 = rentlist.get(num).getPpay();
-            editRController erc = f.getController();
-            erc.startEditr(prno, y1, y2, y3);
+                Stage stage = new Stage();
+                stage.setScene(new Scene(root));
 
-            stage.showAndWait();
+                String prno = rentlist.get(num).getPrno();
+                String y1 = rentlist.get(num).getPtime();
+                String y2 = rentlist.get(num).getPdate();
+                String y3 = rentlist.get(num).getPpay();
+                editRController erc = f.getController();
+                erc.startEditr(prno, y1, y2, y3);
 
-            rentlist.clear();
+                stage.showAndWait();
 
-            List<pReservationModel> km = memberDAO.listRent(mainController.mlm);
-            for (pReservationModel m : km) {
-                rentlist.add(m);
+                rentlist.clear();
+
+                List<pReservationModel> km = memberDAO.listRent(mainController.mlm);
+                for (pReservationModel m : km) {
+                    rentlist.add(m);
+                }
+
+                renttv.setItems(rentlist);
+            } else {
+                Alert warn = new Alert(Alert.AlertType.WARNING);
+                warn.setTitle(":: 변경 불가 일정 ::");
+                warn.setHeaderText(null);
+                warn.setContentText("이미 취소된 예약일정입니다.");
+                warn.showAndWait();
             }
+        }else {
+            Alert info = new Alert(Alert.AlertType.INFORMATION);
+            info.setTitle("확인");
+            info.setHeaderText(null);
+            info.setContentText("수정/취소 할 예약정보를 선택해주세요");
+            info.showAndWait();
+        }
 
-            renttv.setItems(rentlist);
+    }
+
+    public void updateK(ActionEvent event) {
+        int num = tableView2.getSelectionModel().getSelectedIndex();
+
+        if (num != -1) {
+            String ing = krmList.get(num).getIng();
+            if (!ing.equals("예약취소")) {
+
+                FXMLLoader f = new FXMLLoader(getClass().getResource("/fxml/editKangseup.fxml"));
+                Parent root = null;
+                try {
+                    root = f.load();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+
+                Stage stage = new Stage();
+                stage.setScene(new Scene(root));
+
+
+                String caddr[] = memberController.krmList.get(num).getLesson().toString().split("-");
+
+                String rno = krmList.get(num).getRno();
+                String y1 = caddr[0];
+                String y2 = caddr[1];
+                String y3 = memberController.krmList.get(num).getTerm();
+                String y4 = memberController.krmList.get(num).getLpay();
+
+                editKangseupController ekc = f.getController();
+
+                ekc.startEditk(rno, y1, y2, y3, y4);
+
+                stage.showAndWait();
+
+
+                krmList.clear();
+
+                List<kReservationModel> km = memberDAO.createkrm();
+                for (kReservationModel m : km) {
+                    krmList.add(m);
+                }
+
+                tableView2.setItems(krmList);
+            }else {
+                Alert warn = new Alert(Alert.AlertType.WARNING);
+                warn.setTitle(":: 변경 불가 일정 ::");
+                warn.setHeaderText(null);
+                warn.setContentText("이미 취소된 예약일정입니다.");
+                warn.showAndWait();
+            }
         } else {
-            Alert warn = new Alert(Alert.AlertType.WARNING);
-            warn.setTitle(":: 변경 불가 일정 ::");
-            warn.setHeaderText(null);
-            warn.setContentText("이미 취소된 예약일정입니다.");
-            warn.showAndWait();
+            Alert info = new Alert(Alert.AlertType.INFORMATION);
+            info.setTitle("확인");
+            info.setHeaderText(null);
+            info.setContentText("수정/취소 할 예약정보를 선택해주세요");
+            info.showAndWait();
         }
 
     }
@@ -581,7 +649,7 @@ public class memberController implements Initializable {
 
     // 로그인 창 띄우기
     public void showlogin(ActionEvent event) throws Exception {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/login.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/login.fxml"));
         Parent root = loader.load();
 
         Stage stage = new Stage();
@@ -592,7 +660,7 @@ public class memberController implements Initializable {
         loginController lc = loader.getController();
         lc.sendData(logoutbtn, loginBtn, username, nim, stage, mainPane);
 
-        FXMLLoader loader2 = new FXMLLoader(getClass().getResource("/view/subMain.fxml"));
+        FXMLLoader loader2 = new FXMLLoader(getClass().getResource("/fxml/subMain.fxml"));
         Parent root2 = loader2.load();
 
         mainPane.getChildren().clear();
@@ -724,45 +792,6 @@ public class memberController implements Initializable {
     public void m2() throws Exception {
         SingleSelectionModel<Tab> sm = memberTab.getSelectionModel();
         sm.select(2);
-    }
-
-    public void updateK(ActionEvent event) {
-
-        FXMLLoader f = new FXMLLoader(getClass().getResource("/fxml/editKangseup.fxml"));
-        Parent root = null;
-        try {
-            root = f.load();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-        Stage stage = new Stage();
-        stage.setScene(new Scene(root));
-
-        int num = tableView2.getSelectionModel().getSelectedIndex();
-
-        String caddr[] = memberController.krmList.get(num).getLesson().toString().split("-");
-
-        String rno = krmList.get(num).getRno();
-        String y1 = caddr[0];
-        String y2 = caddr[1];
-        String y3 = memberController.krmList.get(num).getTerm();
-        String y4 = memberController.krmList.get(num).getLpay();
-        System.out.println(y1);
-        editKangseupController ekc = f.getController();
-        ekc.startEditk(rno, y1, y2, y3, y4);
-
-        stage.showAndWait();
-
-
-        krmList.clear();
-
-        List<kReservationModel> km = memberDAO.createkrm();
-        for (kReservationModel m : km) {
-            krmList.add(m);
-        }
-
-        tableView2.setItems(krmList);
     }
 
     public void sendData(Button logoutbtn, Button loginBtn, Label username, Label nim, Stage stage, Pane mainPane) {

@@ -12,6 +12,7 @@ import javafx.stage.Stage;
 import mxk.v1.dao.rentalDAO;
 
 import java.net.URL;
+import java.time.LocalDate;
 import java.util.ResourceBundle;
 
 /**
@@ -59,6 +60,10 @@ public class editRController {
         username.setText(mainController.mlm.getUsername());
         tel.setText(mainController.mlm.getTel());
         addr.setText(mainController.mlm.getAddr());
+        int year = Integer.parseInt( y2.split("-")[0] );
+        int month = Integer.parseInt( y2.split("-")[1] );
+        int day = Integer.parseInt( y2.split("-")[2] );
+        pdate.setValue(LocalDate.of(year, month, day));
 
         titletxt.setFont(Font.loadFont(getClass().getResource("/font/rose.ttf").toExternalForm(), 18));
     }

@@ -15,6 +15,7 @@ import javafx.scene.layout.Pane;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import mxk.v1.dao.loginDAO;
+import mxk.v1.model.loginMemberModel;
 import mxk.v1.model.loginViewModel;
 import java.io.IOException;
 import java.net.URL;
@@ -53,9 +54,9 @@ public class loginController implements Initializable {
             if(pno==0){logintxt.setText("비밀번호를 확인해주세요.");}
             else if(ino==1){
                 loginViewModel lm = loginDAO.createView(uid);
-
+                loginMemberModel am = loginDAO.createlmm(uid);
                 mainController.mlm = lm;
-
+                mainController.mlmm = am;
                 logintxt.setText("");
                 stage.close();
 
@@ -68,26 +69,6 @@ public class loginController implements Initializable {
 
             }//else if2
         }//else if1
-
-
-    }
-
-    private void showMain() {
-
-        Stage stage = new Stage();
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/main.fxml"));
-        Parent root = null;
-        try {
-            root = loader.load();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        stage.setScene(new Scene(root));
-        stage.setTitle(":: Main ::");
-        stage.setResizable(false);
-        stage.getIcons().add(new Image("/img/tlogofinal.png"));
-
-        stage.show();
 
 
     }

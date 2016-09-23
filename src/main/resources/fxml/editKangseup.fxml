@@ -1,36 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.scene.control.*?>
-<?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<Pane fx:id="editpane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mxk.v1.controller.editKangseupController">
    <children>
-      <SplitMenuButton layoutX="126.0" layoutY="232.0" mnemonicParsing="false" text="강습기간선택">
-         <items>
-            <MenuItem mnemonicParsing="false" text="10월(1일~31일) " />
-            <MenuItem mnemonicParsing="false" text="11월(1일~30일)" />
-            <MenuItem mnemonicParsing="false" text="12월(1일~31일)" />
-         </items>
-      </SplitMenuButton>
-      <TextField fx:id="addr2" layoutX="126.0" layoutY="166.0" prefHeight="23.0" prefWidth="421.0" />
-      <TextField fx:id="tel2" layoutX="126.0" layoutY="134.0" prefHeight="23.0" prefWidth="137.0" />
-      <TextField fx:id="userName2" layoutX="126.0" layoutY="101.0" />
-      <TextField fx:id="userId2" layoutX="126.0" layoutY="68.0" />
-      <SplitMenuButton layoutX="249.0" layoutY="199.0" mnemonicParsing="false" text="프로그램선택">
-         <items>
-            <MenuItem mnemonicParsing="false" text="어린이반            " />
-            <MenuItem mnemonicParsing="false" text="성인반" />
-            <MenuItem mnemonicParsing="false" text="직장반" />
-         </items>
-      </SplitMenuButton>
-      <SplitMenuButton fx:id="selectk" layoutX="126.0" layoutY="199.0" mnemonicParsing="false" text="강습종목선택">
-         <items>
-            <MenuItem mnemonicParsing="false" text="수영                  " />
-            <MenuItem mnemonicParsing="false" text="테니스" />
-         </items>
-      </SplitMenuButton>
+      <TextField fx:id="addr" layoutX="126.0" layoutY="166.0" prefHeight="23.0" prefWidth="421.0" />
+      <TextField fx:id="tel" layoutX="126.0" layoutY="134.0" prefHeight="23.0" prefWidth="137.0" />
+      <TextField fx:id="userName" layoutX="126.0" layoutY="101.0" />
+      <TextField fx:id="userId" layoutX="126.0" layoutY="68.0" />
+      <ComboBox fx:id="selt1" layoutX="127.0" layoutY="199.0" onAction="#kStep1" prefWidth="150.0" promptText="강습종목선택" />
+      <ComboBox fx:id="selt2" disable="true" layoutX="291.0" layoutY="199.0" onAction="#kStep2" prefWidth="150.0" promptText="프로그램선택" />
+      <ComboBox fx:id="selt3" disable="true" layoutX="127.0" layoutY="232.0" onAction="#kStep3" prefWidth="150.0" promptText="강습기간선택" />
       <Label layoutX="54.0" layoutY="236.0" text="기간선택" />
       <Label layoutX="54.0" layoutY="203.0" text="강습선택" />
       <Label layoutX="78.0" layoutY="170.0" text="주소" />
@@ -42,9 +25,9 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <Button layoutX="243.0" layoutY="334.0" mnemonicParsing="false" text="수정하기" />
-      <Button layoutX="317.0" layoutY="334.0" mnemonicParsing="false" text="취소" />
+      <Button layoutX="243.0" layoutY="334.0" mnemonicParsing="false" onAction="#update" text="예약수정" />
+      <Button layoutX="317.0" layoutY="334.0" mnemonicParsing="false" onAction="#delete" text="예약취소" />
       <Label layoutX="55.0" layoutY="268.0" text="예상금액" />
-      <TextField fx:id="lpay" editable="false" layoutX="127.0" layoutY="264.0" />
+      <TextField fx:id="payText" layoutX="127.0" layoutY="264.0" />
    </children>
 </Pane>

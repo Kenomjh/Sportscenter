@@ -303,7 +303,11 @@ public class mainController implements Initializable {
         a.show();
 
         loginController lc = f2.getController();
-        lc.sendData(logoutbtn,null,username,nim,a,null);
+        lc.sendData(logoutbtn,null,username,nim,a,mainPane);
+
+        mlm = null;
+        mlmm = null;
+
     }
 
     public void relogin(ActionEvent event) throws Exception {

@@ -26,7 +26,7 @@ public class editKangseupController {
     @FXML public TextField addr;
     @FXML public TextField tel;
 
-    //ÄŞº¸¹Ú½º¿¡ µé¾î°¥ ¾ÆÀÌÅÛµéÀ» ÀúÀåÇÒ º¯¼ö
+    //ì½¤ë³´ë°•ìŠ¤ì— ë“¤ì–´ê°ˆ ì•„ì´í…œë“¤ì„ ì €ì¥í•  ë³€ìˆ˜
     private String[] kangseup = new String[2];
     private String[] program = new String[3];
     private String[] term = new String[3];
@@ -49,16 +49,16 @@ public class editKangseupController {
         selt3.setValue(y3);
         payText.setText(y4);
 
-        kangseup[0] = "¼ö¿µ";
-        kangseup[1] = "Å×´Ï½º";
+        kangseup[0] = "ìˆ˜ì˜";
+        kangseup[1] = "í…Œë‹ˆìŠ¤";
 
-        program[0] = "¾î¸°ÀÌ¹İ";
-        program[1] = "¼ºÀÎ¹İ";
-        program[2] = "Á÷ÀåÀÎ¹İ";
+        program[0] = "ì–´ë¦°ì´ë°˜";
+        program[1] = "ì„±ì¸ë°˜";
+        program[2] = "ì§ì¥ì¸ë°˜";
 
-        term[0] = "10¿ù(1ÀÏ~31ÀÏ)";
-        term[1] = "11¿ù(1ÀÏ~30ÀÏ)";
-        term[2] = "12¿ù(1ÀÏ~31ÀÏ)";
+        term[0] = "10ì›”(1ì¼~31ì¼)";
+        term[1] = "11ì›”(1ì¼~30ì¼)";
+        term[2] = "12ì›”(1ì¼~31ì¼)";
 
 
         ObservableList k1 = FXCollections.observableArrayList(kangseup);
@@ -84,6 +84,7 @@ public class editKangseupController {
             rsl = selt1.getSelectionModel().getSelectedItem() + "-" + selt2.getSelectionModel().getSelectedItem();
             kangseupDAO kd = new kangseupDAO();
             apay = String.valueOf(kd.payCk(rsl));
+            System.out.println("nnnnnn"+apay);
             payText.setText(apay);
         }
         as = selt3.getSelectionModel().getSelectedItem() + " ";
@@ -95,7 +96,9 @@ public class editKangseupController {
         if (selt1.getSelectionModel().getSelectedItem() != null&&selt2.getSelectionModel().getSelectedItem() != null) {
             rsl = selt1.getSelectionModel().getSelectedItem() + "-" + selt2.getSelectionModel().getSelectedItem();
             kangseupDAO kd = new kangseupDAO();
+
             apay = String.valueOf(kd.payCk(rsl));
+            System.out.println("aaaaaa"+apay);
             payText.setText(apay);
         }
         as = selt3.getSelectionModel().getSelectedItem() + " ";
