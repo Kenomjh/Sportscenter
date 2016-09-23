@@ -96,6 +96,6 @@ public class splashController implements Initializable{
         a.show();
 
         loginController lc = f2.getController();
-        lc.sendData(mc.getLogoutbtn(),mc.getUsername(),mc.getNim(),a);
+        lc.sendData(mc.getLogoutbtn(),null,mc.getUsername(),mc.getNim(),a,null);
     }
 }//SplashController

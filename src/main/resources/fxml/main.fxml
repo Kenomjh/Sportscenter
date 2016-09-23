@@ -131,9 +131,10 @@
                                         </ImageView>
                                     </graphic>
                                 </Button>
-                                <Label fx:id="username" layoutX="663.0" layoutY="7.0" text="" visible="false" />
+                                <Label fx:id="username" alignment="CENTER_RIGHT" layoutX="663.0" layoutY="7.0" text="" visible="false" />
                                 <Label fx:id="nim" layoutX="700.0" layoutY="7.0" text="님" visible="false" />
                                 <Button fx:id="logoutbtn" onAction="#logout" layoutX="719.0" layoutY="3.0" mnemonicParsing="false" text="로그아웃" visible="false" />
+                                <Button fx:id="loginBtn" layoutX="725.0" layoutY="3.0" mnemonicParsing="false" onAction="#relogin" text="로그인" visible="false" />
                             </children>
                         </AnchorPane>
                     </items></ToolBar>

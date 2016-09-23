@@ -41,6 +41,7 @@ public class mainController implements Initializable {
     private Label nim;
     @FXML
     private Button logoutbtn;
+    @FXML private Button loginBtn;
 
     public static loginViewModel mlm = null;
     public static loginMemberModel mlmm = null;
@@ -304,4 +305,18 @@ public class mainController implements Initializable {
         loginController lc = f2.getController();
         lc.sendData(logoutbtn,null,username,nim,a,null);
     }
+
+    public void relogin(ActionEvent event) throws Exception {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/login.fxml"));
+        Parent root = loader.load();
+
+        Stage stage = new Stage();
+        stage.setScene(new Scene(root));
+        stage.setTitle("로그인");
+        stage.show();
+
+        loginController lc = loader.getController();
+        lc.sendData(logoutbtn, loginBtn, username, nim, stage, mainPane);
+    } // relogin
+
 }
